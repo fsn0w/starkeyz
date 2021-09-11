@@ -75,7 +75,7 @@
 		<!-- Start introduction -->
 		<?php if ( is_front_page() ) : ?>
 			<div class="container mx-auto my-12 border-b pb-12">
-				<h1 class="font-bold text-lg text-secondary uppercase">TailPress</h1>
+				<h1 class="font-bold text-lg text-secondary uppercase mb-10">TailPress</h1>
 				<h2 class="text-3xl lg:text-7xl tracking-tight font-extrabold my-4">Rapidly build your WordPress theme
 					with <a href="https://tailwindcss.com" class="text-primary">Tailwind CSS</a>.</h2>
 				<p class="max-w-screen-lg text-gray-700 text-lg font-medium mb-10">TailPress is your go-to starting
