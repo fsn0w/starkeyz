@@ -2,10 +2,15 @@
   "version": 1,
   "settings": {
     "layout": {
-      "wideSize": "1280px"
+      "wideSize": "1210px"
     },
     "color": {
       "palette": [
+        {
+          "name": "Background",
+          "slug": "background",
+          "color": "#171423"
+        },
         {
           "name": "Primary",
           "slug": "primary",
@@ -43,12 +48,12 @@
         {
           "slug": "large",
           "name": "Large",
-          "size": "1.125rem"
+          "size": "3.125rem"
         },
         {
           "slug": "xl",
           "name": "XL",
-          "size": "1.25rem"
+          "size": "10.25rem"
         },
         {
           "slug": "xxl",

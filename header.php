@@ -9,7 +9,7 @@
 	<?php wp_head(); ?>
 </head>
 
-<body <?php body_class( 'bg-white text-gray-900 antialiased' ); ?>>
+<body <?php body_class( 'bg-background text-white antialiased text-base' ); ?>>
 
 <?php do_action( 'tailpress_site_before' ); ?>
 
@@ -20,7 +20,7 @@
 	<header>
 
 		<div class="mx-auto container">
-			<div class="lg:flex lg:justify-between lg:items-center border-b py-6">
+			<div class="lg:flex lg:justify-between lg:items-center py-6">
 				<div class="flex justify-between items-center">
 					<div>
 						<?php if ( has_custom_logo() ) { ?>
@@ -32,7 +32,7 @@
 								</a>
 							</div>
 
-							<p class="text-sm font-light text-gray-600">
+							<p class="text-sm font-light text-white">
 								<?php echo get_bloginfo( 'description' ); ?>
 							</p>
 
@@ -71,14 +71,15 @@
 	</header>
 
 	<div id="content" class="site-content flex-grow">
-
+<span>aaaa</span>
 		<!-- Start introduction -->
 		<?php if ( is_front_page() ) : ?>
 			<div class="container mx-auto my-12 border-b pb-12">
-				<h1 class="font-bold text-lg text-secondary uppercase mb-10">TailPress</h1>
+				<h1 class="font-bold text-lg text-secondary uppercase mb-10 font-title">TailPress</h1> 
+				<h1>AAAA</h1>
 				<h2 class="text-3xl lg:text-7xl tracking-tight font-extrabold my-4">Rapidly build your WordPress theme
 					with <a href="https://tailwindcss.com" class="text-primary">Tailwind CSS</a>.</h2>
-				<p class="max-w-screen-lg text-gray-700 text-lg font-medium mb-10">TailPress is your go-to starting
+				<p class="max-w-screen-lg text-gray-700 text-lg  mb-10">TailPress is your go-to starting
 					point for developing WordPress themes with TailwindCSS and comes with basic block-editor support out
 					of the box.</p>
 				<a href="https://github.com/jeffreyvr/tailpress"

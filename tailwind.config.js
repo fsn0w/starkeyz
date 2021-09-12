@@ -22,14 +22,22 @@ module.exports = {
             },
         },
         extend: {
-            colors: tailpress.colorMapper(tailpress.theme('settings.color.palette', theme))
+            colors: tailpress.colorMapper(tailpress.theme('settings.color.palette', theme)),
+            fontSize: {
+                'base': '1.065rem',
+            },
+        },
+        fontFamily: {
+            sans: ["Ubuntu Mono", "monospace"],
+            "source": ["Source Sans Pro", "sans-serif"],
+            "title": ["zrnic_rg", "sans-serif"]
         },
         screens: {
             'sm': '640px',
             'md': '768px',
             'lg': '1024px',
             'xl': tailpress.theme('settings.layout.wideSize', theme)
-        }
+        },
     },
     plugins: [
         tailpress.tailwind

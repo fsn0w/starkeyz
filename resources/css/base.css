@@ -1,0 +1,15 @@
+:root {
+    --color-primary: #80CAA2;
+    --color-primary-dark: #6ab18b;
+    --color-secondary: #7D9BA4;
+    --color-text: #575757;
+    --color-bg: #CEDBDF;
+  }
+
+@font-face {
+    font-family: 'zrnic_rg';
+    src: url('../fonts/zrnic_rg-webfont.woff2') format('woff2'),
+         url('../fonts/zrnic_rg-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
