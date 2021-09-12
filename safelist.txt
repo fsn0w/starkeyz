@@ -6,3 +6,9 @@ alignright
 wp-block-button
 wp-caption
 wp-caption-text
+pt-24
+overflow-x-hidden
+relative
+font-zrnic
+mb-10
+max-h-45r

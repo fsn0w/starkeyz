@@ -26,11 +26,14 @@ module.exports = {
             fontSize: {
                 'base': '1.065rem',
             },
+            maxHeight: {
+                '45r': '45rem',
+            }
         },
         fontFamily: {
             sans: ["Ubuntu Mono", "monospace"],
-            "source": ["Source Sans Pro", "sans-serif"],
-            "title": ["zrnic_rg", "sans-serif"]
+            source: ["Source Sans Pro", "sans-serif"],
+            zrnic: ["zrnic_rg", "sans-serif"] 
         },
         screens: {
             'sm': '640px',

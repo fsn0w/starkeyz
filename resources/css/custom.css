@@ -1,0 +1,57 @@
+.main-stars-bg {
+    background-image: url(/wp-content/uploads/2021/09/main-stars-bg1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center bottom;
+}
+
+.main-stars-bg::after {
+    content:'';
+    position: absolute;
+    width:100%; 
+    height:100%;
+    top:0;
+    background: linear-gradient(
+180deg,rgba(0,0,0,0) 70%,rgba(23, 20, 35, 1) 100%);
+    z-index:0;
+}
+
+.main-stars-bg .container {
+    z-index:2;
+}
+
+.card-moon img {
+    position: absolute;
+    top:-100px;
+    left: 53%;
+}
+
+.h1-title {
+    line-height: 7.5rem;
+}
+
+.star-btn a {
+    min-width: 175px;
+}
+
+.btn-outline a {
+    border: 3px solid rgb(126,122,177)!important
+}
+
+.list-btns {
+    column-gap: 1.5em;
+}
+
+.btn-fill a {
+    padding: 15px 40px;
+}
+
+.btn-fill a, .btn-outline a {
+    transition: .4s;
+}
+
+.btn-fill a:hover, .btn-outline a:hover {
+    -webkit-box-shadow: 0px 0px 10px 6px rgba(136, 123, 199, 0.45), rgba(136, 123, 199, 0.45) 0px 0px 10px 6px inset;
+    -moz-box-shadow: 0px 0px 10px 6px rgba(136, 123, 199, 0.45), rgba(136, 123, 199, 0.45) 0px 0px 10px 6px inset;
+    box-shadow: 0px 0px 10px 6px rgba(136, 123, 199, 0.45), rgba(136, 123, 199, 0.45) 0px 0px 10px 6px inset;
+}

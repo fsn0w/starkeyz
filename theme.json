@@ -12,6 +12,11 @@
           "color": "#171423"
         },
         {
+          "name": "Footer",
+          "slug": "footer",
+          "color": "#5E3E7B"
+        },
+        {
           "name": "Primary",
           "slug": "primary",
           "color": "#0EA5E9"
@@ -53,7 +58,7 @@
         {
           "slug": "xl",
           "name": "XL",
-          "size": "10.25rem"
+          "size": "5.25rem"
         },
         {
           "slug": "xxl",
@@ -63,7 +68,7 @@
         {
           "slug": "xxxl",
           "name": "3XL",
-          "size": "1.875rem"
+          "size": "7rem"
         }
       ]
     }
