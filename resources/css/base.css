@@ -13,3 +13,68 @@
     font-weight: normal;
     font-style: normal;
 }
+
+/*
+    Menu
+*/
+
+.bg-mobmenu {
+    background: linear-gradient(
+135deg,rgb(76,66,100) 0%,rgb(112,74,153) 50%,rgb(82,67,106) 100%);
+}
+
+/* 
+    Titles
+*/
+
+h1 {
+    @apply text-[2rem] leading-[2.2rem] xl:text-[7rem] font-zrnic xl:leading-[7.5rem] mb-10;
+}
+
+h2 em {
+    font-style: normal!important;
+    @apply text-3xl;
+}
+
+.h2-lines::before, .h2-lines::after {
+    content:'';
+    border-top: 2px dashed #fff;
+    display: inline-block;
+    position: absolute;
+    top: 1.75rem;
+    width: 100%;
+    max-width: 350px;
+}
+
+.h2-lines::before {
+    left:0;
+}
+
+.h2-lines::after {
+    right: 0;
+}
+
+.h2-em-logo em {
+    display: inline-block;
+    background-image: url(/wp-content/uploads/2021/09/starkeyz-logo.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 85px;
+    width:  210px;
+
+    text-indent: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+
+    margin-bottom: -18px;
+}
+
+.h2-em-logo.h2-lines::before, .h2-em-logo.h2-lines::after {
+    top: 3rem;
+}
+
+/* 
+    Texts
+*/
+

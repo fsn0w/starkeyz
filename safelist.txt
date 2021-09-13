@@ -10,5 +10,16 @@ pt-24
 overflow-x-hidden
 relative
 font-zrnic
+mb-40
+mb-16
 mb-10
-max-h-45r
+mb-6
+mb-4
+max-h-section1
+leading-8
+leading-9
+z-0
+z-10
+h-screen
+top-0
+top-80

@@ -53,17 +53,17 @@
         {
           "slug": "large",
           "name": "Large",
-          "size": "3.125rem"
+          "size": "1.9rem"
         },
         {
           "slug": "xl",
           "name": "XL",
-          "size": "5.25rem"
+          "size": "2.5rem"
         },
         {
           "slug": "xxl",
           "name": "2XL",
-          "size": "1.5rem"
+          "size": "3.125rem"
         },
         {
           "slug": "xxxl",

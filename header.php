@@ -9,7 +9,7 @@
 	<?php wp_head(); ?>
 </head>
 
-<body <?php body_class( 'bg-background text-white antialiased text-base' ); ?>>
+<body <?php body_class( 'bg-background text-white antialiased text-sm lg:text-base' ); ?>>
 
 <?php do_action( 'tailpress_site_before' ); ?>
 
@@ -58,7 +58,7 @@
 				wp_nav_menu(
 					array(
 						'container_id'    => 'primary-menu',
-						'container_class' => 'hidden bg-gray-100 mt-4 p-4 lg:mt-0 lg:p-0 lg:bg-transparent lg:block font-zrnic',
+						'container_class' => 'hidden bg-purple-600 rounded-2xl mt-4 p-4 lg:mt-0 lg:p-0 lg:bg-transparent xl:bg-transparent lg:block font-zrnic',
 						'menu_class'      => 'lg:flex lg:-mx-4',
 						'theme_location'  => 'primary',
 						'li_class'        => 'lg:mx-2 border-transparent border hover:border hover:border-white hover:rounded-md px-2 py-1',
