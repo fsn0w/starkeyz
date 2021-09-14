@@ -9,9 +9,9 @@
 
 <footer id="colophon" class="site-footer py-12 bg-footer" role="contentinfo">
 
-	<div class="container flex items-center justify-between mx-auto text-center text-white">
-		<div class="w-1/3"><?php the_custom_logo(); ?></div>
-		<div class="footer-social w-1/3">
+	<div class="container flex flex-col lg:flex-row items-center justify-between mx-auto text-center text-white">
+		<div class="footer-logo w-full lg:w-1/3 mb-4 lg:mb-0"><?php the_custom_logo(); ?></div>
+		<div class="footer-social w-full lg:w-1/3 mb-4 lg:mb-0">
 			<a href="" class="inline-flex justify-center items-center w-12 h-12 mx-2 rounded-full"><svg width="24" height="19" viewBox="0 0 24 19" fill="none" xmlns="http://www.w3.org/2000/svg">
 			<path d="M23.9178 2.44844C23.0905 2.80482 22.145 3.04241 21.1995 3.1612C22.145 2.56724 22.9723 1.61691 23.3269 0.547785C22.3814 1.14174 21.4359 1.49812 20.2541 1.7357C19.4268 0.785368 18.1267 0.191406 16.8267 0.191406C14.2266 0.191406 12.0992 2.32966 12.0992 4.94307C12.0992 5.29945 12.0992 5.65582 12.2174 6.01219C8.3173 5.77461 4.77172 3.87394 2.40801 1.02294C2.05345 1.73569 1.81708 2.56724 1.81708 3.39878C1.81708 5.06186 2.64439 6.48736 3.94443 7.31891C3.11713 7.31891 2.40801 7.08132 1.81708 6.72495C1.81708 8.98199 3.47168 11.0014 5.59902 11.3578C5.24446 11.4766 4.77173 11.4766 4.29899 11.4766C3.94443 11.4766 3.70806 11.4766 3.3535 11.3578C3.94443 13.2585 5.71722 14.684 7.84456 14.684C6.18996 15.9907 4.1808 16.7034 1.93527 16.7034C1.58072 16.7034 1.22616 16.7035 0.753418 16.5847C2.88076 17.8914 5.36266 18.7229 8.08093 18.7229C16.8267 18.7229 21.5541 11.4766 21.5541 5.18065V4.58669C22.4996 4.23032 23.3269 3.39877 23.9178 2.44844Z" fill="white"/>
 			</svg></a>
@@ -27,7 +27,7 @@
 </a>
 
 		</div>
-		<div class="w-1/3">@2021 - All rights reserved to Starkeyz</div>
+		<div class="w-full lg:w-1/3 text-sm lg:text-base mb-4 lg:mb-0">@2021 - All rights reserved to Starkeyz</div>
 	</div>
 
 </footer>

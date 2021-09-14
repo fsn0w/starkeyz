@@ -26,13 +26,8 @@ module.exports = {
             fontSize: {
                 'base': '1.065rem',
             },
-            maxHeight: {
-                'section1': '47rem',
-            },
             lineHeight: {
                 '7': '2.2rem',
-                '8': '3.7rem',
-                '9': '7.5rem',
             },
             borderRadius: {
                 '3xl': '4rem',

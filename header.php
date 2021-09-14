@@ -9,7 +9,7 @@
 	<?php wp_head(); ?>
 </head>
 
-<body <?php body_class( 'bg-background text-white antialiased text-sm lg:text-base' ); ?>>
+<body <?php body_class( 'bg-background text-white antialiased text-sm lg:text-base lg:leading-6' ); ?>>
 
 <?php do_action( 'tailpress_site_before' ); ?>
 
@@ -41,15 +41,18 @@
 
 					<div class="lg:hidden">
 						<a href="#" aria-label="Toggle navigation" id="primary-menu-toggle">
-							<svg viewBox="0 0 20 20" class="inline-block w-6 h-6" version="1.1"
-								 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-								<g stroke="none" stroke-width="1" fill="currentColor" fill-rule="evenodd">
-									<g id="icon-shape">
-										<path d="M0,3 L20,3 L20,5 L0,5 L0,3 Z M0,9 L20,9 L20,11 L0,11 L0,9 Z M0,15 L20,15 L20,17 L0,17 L0,15 Z"
-											  id="Combined-Shape"></path>
-									</g>
-								</g>
-							</svg>
+<svg width="13" height="17" viewBox="0 0 13 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0)">
+<path d="M1.97162 0H12.6185V3.85567H1.97162V0Z" fill="white"/>
+<path d="M1.97162 13.1881H12.6185V17.0438H1.97162V13.1881Z" fill="white"/>
+<path d="M-2.67029e-05 6.57214H12.6185V10.4278H-2.67029e-05V6.57214Z" fill="white"/>
+</g>
+<defs>
+<clipPath id="clip0">
+<rect width="12.6186" height="17" fill="white" transform="matrix(-1 0 0 1 12.6185 0)"/>
+</clipPath>
+</defs>
+</svg>
 						</a>
 					</div>
 				</div>
@@ -58,10 +61,10 @@
 				wp_nav_menu(
 					array(
 						'container_id'    => 'primary-menu',
-						'container_class' => 'hidden bg-purple-600 rounded-2xl mt-4 p-4 lg:mt-0 lg:p-0 lg:bg-transparent xl:bg-transparent lg:block font-zrnic',
+						'container_class' => 'hidden bg-purple-400 shadow-inner rounded-2xl mt-4 p-4 lg:shadow-none lg:mt-0 lg:p-0 lg:bg-transparent xl:bg-transparent lg:block font-zrnic',
 						'menu_class'      => 'lg:flex lg:-mx-4',
 						'theme_location'  => 'primary',
-						'li_class'        => 'lg:mx-2 border-transparent border hover:border hover:border-white hover:rounded-md px-2 py-1',
+						'li_class'        => 'text-lg lg:text-base lg:mx-2 border-transparent border hover:border hover:border-white hover:rounded-md px-2 py-1',
 						'fallback_cb'     => false,
 					)
 				);
