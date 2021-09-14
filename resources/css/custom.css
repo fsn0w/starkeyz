@@ -193,7 +193,7 @@
 }
 
 .milestones-box hr {
-    @apply border-2 order-4 mb-6 mx-0 lg:mx-auto w-6 lg:w-8 opacity-100 !important;
+    @apply border-2 border-white order-4 mb-6 mx-0 lg:mx-auto w-6 lg:w-8 opacity-100 !important; 
 }
 
 .milestones-box p {
