@@ -157,6 +157,7 @@
     background: radial-gradient(50% 50% at 50% 50%, #FFC46B 0%, #8A00D4 0.01%, #FFC46B 100%);
     filter: blur(300px);
     float:right;
+    opacity: .5;
 }
 
 /* 
