@@ -169,7 +169,7 @@
 }
 
 .milestones-box>div {
-    @apply rounded-3xl flex flex-col px-10 py-8 lg:py-4 lg:pb-20 mb-8 lg:mb-0;
+    @apply max-w-xs mx-auto rounded-3xl flex flex-col px-10 py-8 lg:py-4 lg:pb-20 mb-8 lg:mb-0;
 }
 
 .milestones-box>div>.wp-block-group:first-child {
