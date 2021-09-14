@@ -28,7 +28,7 @@
 */
 
 h1 {
-    @apply font-zrnic text-[2rem] leading-[2.2rem] xl:text-[10rem] xl:leading-[7.5rem] mb-10;
+    @apply font-zrnic text-[2rem] leading-[2.2rem] xl:text-[7rem] xl:leading-[7.5rem] mb-10;
 }
 
 h2 {
