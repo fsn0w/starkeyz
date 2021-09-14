@@ -664,11 +664,11 @@ h1{
 
 @media (min-width: 1210px){
   h1{
-    font-size: 7rem;
+    font-size: 10rem;
   }
 
   h1{
-    line-height: 7.5rem;
+    line-height: 10.5rem;
   }
 }
 
@@ -2102,5 +2102,9 @@ h2 em{
 
   .xl\:leading-\[3\.75rem\]{
     line-height: 3.75rem;
+  }
+
+  .xl\:leading-\[10\.5rem\]{
+    line-height: 10.5rem;
   }
 }

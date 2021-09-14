@@ -907,4 +907,8 @@ body {
   .xl\:leading-\[3\.75rem\] {
     line-height: 3.75rem
   }
+
+  .xl\:leading-\[10\.5rem\] {
+    line-height: 10.5rem
+  }
 }
