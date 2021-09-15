@@ -15,17 +15,16 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center bottom;
+    @apply pt-12 lg:pt-24;
 }
 
 .main-stars-bg::after {
     content:'';
-    position: absolute;
-    width:100%; 
-    height:100%;
-    top:0;
+    /*
     background: linear-gradient(
 180deg,rgba(0,0,0,0) 70%,rgba(23, 20, 35, 1) 100%);
-    z-index:0;
+*/
+    @apply z-0 top-0 h-full w-full absolute bg-gradient-to-t from-[#171423] lg:via-transparent to-transparent;
 }
 
 .main-stars-bg .container {
@@ -38,7 +37,7 @@
 }
 
 .card-moon-mob {
-    @apply sm:hidden;
+    @apply sm:hidden -mr-28 mb-0;
 }
 
 .img-moon img {
@@ -46,23 +45,25 @@
 }
 
 .img-moon {
-    @apply -mr-20 w-3/4 sm:w-full sm:m-0;
+    @apply hidden sm:block sm:w-full sm:m-0;
 }
 
 .img-rocket-moon {
-    @apply sm:hidden;
+    @apply w-[600px] -mt-20 -mb-16 sm:hidden;
 }
 
+/*
 .col-rocketmoon {
     @apply flex justify-end items-center sm:block;
 }
+*/
 
 /* 
     Buttons
 */
 
 .star-btn a {
-    @apply text-sm lg:text-xl lg:min-w-[175px];
+    @apply w-full text-[13px] lg:w-auto lg:text-xl lg:min-w-[175px];
 }
 
 .btn-outline a {
@@ -151,13 +152,12 @@
 }
 
 .backlight-6 {
-    margin-top:-100px;
     width: 320px;
     height: 320px;
     background: radial-gradient(50% 50% at 50% 50%, #FFC46B 0%, #8A00D4 0.01%, #FFC46B 100%);
     filter: blur(300px);
     float:right;
-    opacity: .5;
+    @apply -mt-52 -mr-36 opacity-100 lg:-mt-24 lg:mr-0 lg:opacity-50;
 }
 
 /* 
@@ -165,11 +165,11 @@
 */
 
 .milestones-box {
-    @apply gap-2; 
+    @apply mt-6 gap-2 lg:mt-0;
 }
 
 .milestones-box>div {
-    @apply max-w-xs lg:max-w-full mx-auto rounded-3xl flex flex-col px-10 py-8 lg:py-4 lg:pb-20 mb-8 lg:mb-0;
+    @apply max-w-xs lg:max-w-full mx-auto rounded-3xl flex flex-col px-7 pt-6 pb-8 lg:py-4 lg:pb-20 mb-8 lg:mb-0;
 }
 
 .milestones-box>div>.wp-block-group:first-child {
@@ -177,11 +177,11 @@
 }
 
 .milestones-box h3 {
-    @apply order-2 text-left lg:text-center lg:order-1 text-[1.75rem] lg:text-[2.5rem] mb-4;
+    @apply order-2 -mt-4 text-left -mb-2 lg:mb-4 lg:mt-0 lg:text-center lg:order-1 text-[1.75rem] lg:text-[2.5rem];
 }
 
 .milestones-box .wp-block-image {
-    @apply order-1 lg:order-2 h-20 lg:h-60 flex items-center;
+    @apply order-1 mb-0 lg:order-2 h-20 lg:h-60 flex items-center;
 }
 
 .milestones-box img {
@@ -189,15 +189,15 @@
 }
 
 .milestones-box h4 {
-    @apply order-3 text-lg leading-8 lg:text-3xl lg:text-center mb-2 lg:mb-6;
+    @apply order-3 text-lg leading-8 mb-0 lg:text-3xl lg:text-center lg:mb-2 lg:mb-6;
 }
 
 .milestones-box hr {
-    @apply border-2 border-white order-4 mb-6 mx-0 lg:mx-auto w-6 lg:w-8 opacity-100 !important; 
+    @apply border-2 border-white order-4 mb-3 mx-0 mb-5 w-6 opacity-100 lg:mb-6 lg:mx-auto lg:w-8 !important; 
 }
 
 .milestones-box p {
-    @apply order-5 font-source text-xs leading-6 lg:text-base lg:leading-7;
+    @apply order-5 font-source text-xs leading-5 lg:text-base lg:leading-7;
 }
 
 /*
@@ -205,7 +205,7 @@
 */
 
 .li-lock {
-    @apply mt-4 relative z-10;
+    @apply mt-4 relative z-10 mb-8 lg:mb-12;
 }
 
 .li-lock li::before {
@@ -213,12 +213,11 @@
     background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTciIGhlaWdodD0iMTciIHZpZXdCb3g9IjAgMCAxNyAxNyIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTE1LjE5NjEgMTUuMTk2MUwxMy42MTA5IDcuODk4NzFMMTcgMEw5LjEwMTI5IDMuMzg5MDdMMS44MDM4NiAxLjgwMzg2TDMuMzg5MDcgOS4xMDEyOUwwIDE3TDcuODk4NzEgMTMuNjEwOUwxNS4xOTYxIDE1LjE5NjFaTTEwLjYwNDUgMTIuMTg5N0g2LjM5NTVMNy4zMjQ3NiA4LjY2Mzk5QzYuNzUwOCA4LjI4MTM1IDYuMzk1NSA3LjY1MjczIDYuMzk1NSA2LjkxNDc5QzYuMzk1NSA1Ljc2Njg4IDcuMzI0NzYgNC44MTAyOSA4LjUgNC44MTAyOUM5LjY3NTI0IDQuODEwMjkgMTAuNjA0NSA1LjczOTU1IDEwLjYwNDUgNi45MTQ3OUMxMC42MDQ1IDcuNjUyNzMgMTAuMjIxOSA4LjI4MTM1IDkuNjc1MjQgOC42NjM5OUwxMC42MDQ1IDEyLjE4OTdaIiBmaWxsPSJ3aGl0ZSIvPgo8L3N2Zz4=);
     background-repeat: no-repeat;
     background-position: center;
-    padding: 17px;
-    margin: 0 20px 0 -55px;
+    @apply p-4 bg-s10 my-0 mr-1 -ml-14 lg:mr-5 lg:bg-auto;
 }
 
 .li-lock li {
-        @apply pl-16 mt-2;
+        @apply pl-14 mt-1 lg:pl-16 lg:mt-2;
 }
 
 /*

@@ -7,6 +7,7 @@ wp-block-button
 wp-caption
 wp-caption-text
 
+pt-6
 pt-14
 pt-20 
 lg:pt-0
@@ -15,6 +16,7 @@ pt-24
 overflow-x-hidden
 relative
 font-zrnic
+mb-9
 mb-40
 mb-16
 mb-10
@@ -22,14 +24,29 @@ mb-6
 mb-4
 lg:mb-16
 xl:mb-40
+mb-8 
+lg:mb-10
+mt-12 
+mb-12 
+lg:mb-0
+
+text-[12px] 
+lg:text-base
 
 leading-8
 leading-9
+leading-5
 z-0
 z-10
 lg:text-left
 top-0
 top-80
 section-f-screen
+lg:leading-6
 
 max-w-[500px]
+
+h2-small
+
+w-[200px]
+lg:w-auto

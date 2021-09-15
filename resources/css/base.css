@@ -17,7 +17,11 @@
 html {
     scroll-behavior: smooth;
 }
- 
+
+.container {
+    @apply px-7 lg:px-4 !important;
+}
+
 /*
     Menu
 */
@@ -32,20 +36,24 @@ html {
 */
 
 h1 {
-    @apply font-zrnic text-[2rem] leading-[2.2rem] xl:text-[7rem] xl:leading-[7.5rem] mb-10;
+    @apply font-zrnic mb-1 -mt-4 text-[2rem] leading-[2.2rem] xl:text-[7rem] xl:leading-[7.5rem] lg:mb-10 lg:mt-0;
 }
 
 h2 {
-    @apply font-zrnic text-3xl xl:text-[3.125rem] leading-7 xl:leading-[3.75rem] mb-10;
+    @apply font-zrnic text-[1.65rem] leading-6 mb-4 xl:mb-10 xl:text-[3.125rem] xl:leading-[3.75rem];
+}
+
+h2.h2-small {
+    @apply text-[21.3px] leading-6 -mt-4 mb-4 xl:mb-10 xl:mt-0 xl:leading-[3.75rem] xl:text-[3.125rem] !important;
 }
 
 h2 em {
-    @apply not-italic text-3xl;
+    @apply not-italic text-sm lg:text-3xl;
 }
 
 .h2-lines::before, .h2-lines::after {
     content:'';
-    @apply inline-block absolute w-full max-w-[350px] border-dashed border-t-2 top-0 lg:top-7;
+    @apply inline-block absolute w-full max-w-[350px] border-dashed border-t -top-3 lg:top-7;
 }
 
 .h2-lines::before {

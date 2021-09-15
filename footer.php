@@ -27,7 +27,7 @@
 </a>
 
 		</div>
-		<div class="w-full lg:w-1/3 text-sm lg:text-base mb-4 lg:mb-0">@2021 - All rights reserved to Starkeyz</div>
+		<div class="w-full lg:w-1/3 text-[11px] lg:text-base mb-4 lg:mb-0">@2021 - All rights reserved to Starkeyz</div>
 	</div>
 
 </footer>
