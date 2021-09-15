@@ -12,6 +12,7 @@ pt-14
 pt-20 
 lg:pt-0
 pt-24
+pb-40
 
 overflow-x-hidden
 relative

@@ -7,7 +7,7 @@
 get_header();
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class( 'mb-12' ); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class( 'mb-0' ); ?>>
 
 		<div class="entry-content">
 			<?php

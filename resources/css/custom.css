@@ -164,6 +164,13 @@
     Box's
 */
 
+#backlights {
+    background-image: url(http://starkeyz.nft/wp-content/uploads/2021/09/backlights.jpg);
+    background-position: center 100px;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
 .milestones-box {
     @apply mt-6 gap-2 lg:mt-0;
 }
