@@ -1,3 +1,9 @@
+/* 
+--------
+    MAIN
+--------
+*/
+
 /*
     Grid
 */
@@ -20,10 +26,6 @@
 
 .main-stars-bg::after {
     content:'';
-    /*
-    background: linear-gradient(
-180deg,rgba(0,0,0,0) 70%,rgba(23, 20, 35, 1) 100%);
-*/
     @apply z-0 top-0 h-full w-full absolute bg-gradient-to-t from-[#171423] lg:via-transparent to-transparent;
 }
 
@@ -110,61 +112,6 @@
 }
 
 /* 
-    Backlights
-*/
-
-.backlight-1a {
-    width: 100%;
-    height: 300px;
-    background: radial-gradient(50% 50% at 50% 50%, rgba(220,92,92,.3) 0%, rgba(0,0,0,0) 100%);
-    filter: blur(100px);
-}
-
-.backlight-2a {
-    margin-top:-100px;
-    width: 320px;
-    height: 320px;
-    background: radial-gradient(50% 50% at 50% 50%, #2E22B6 0%, #2E22B6 0%, #2E22B6 0.01%, #8A00D4 100%);
-    filter: blur(300px);
-    float:right;
-}
-
-.backlight-3a {
-    margin-top:-100px;
-    width: 320px;
-    height: 320px;
-    background: radial-gradient(50% 50% at 50% 50%, #2E22B6 0%, #2E22B6 0%, #2E22B6 0.01%, #8A00D4 100%);
-    filter: blur(300px);
-    opacity: .5;
-}
-
-.backlight-4a {
-    margin-top:-100px;
-    width: 320px;
-    height: 320px;
-    background: radial-gradient(50% 50% at 50% 50%, #FFC46B 0%, #8A00D4 0.01%, #FFC46B 100%);
-    filter: blur(300px);
-    opacity: .5;
-}
-
-.backlight-5a {
-    margin-top:100px;
-    width: 320px;
-    height: 220px;
-    background: radial-gradient(50% 50% at 50% 50%, #2E22B6 0%, #2E22B6 0%, #2E22B6 0.01%, #8A00D4 100%);
-    filter: blur(300px);
-}
-
-.backlight-6a {
-    width: 320px;
-    height: 320px;
-    background: radial-gradient(50% 50% at 50% 50%, #FFC46B 0%, #8A00D4 0.01%, #FFC46B 100%);
-    filter: blur(300px);
-    float:right;
-    @apply -mt-52 -mr-36 opacity-100 lg:-mt-24 lg:mr-0 lg:opacity-50;
-}
-
-/* 
     Box's
 */
 
@@ -248,4 +195,30 @@
     -webkit-box-shadow: 0px 0px 10px 6px rgba(37, 12, 48, 0.2);
     -moz-box-shadow: 0px 0px 10px 6px rgba(37, 12, 48, 0.2);
     box-shadow: 0px 0px 10px 6px rgba(37, 12, 48, 0.2);
+}
+
+/* 
+--------
+    MAIN
+--------
+*/
+
+/*
+    BGs
+*/
+
+.safe-bg {
+    background-image: url(/wp-content/uploads/safe-bg1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center bottom;
+}
+
+.safe-bg::after {
+    content:'';
+    @apply z-0 top-0 h-full w-full absolute bg-gradient-to-t from-[#171423] lg:via-transparent to-transparent;
+}
+
+.safe-bg .container {
+    z-index:2;
 }

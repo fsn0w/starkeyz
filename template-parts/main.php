@@ -7,6 +7,12 @@
 get_header();
 ?>
 
+<div id="content" class="site-content flex-grow">
+
+<?php do_action( 'tailpress_content_start' ); ?>
+
+<main>
+
 <article id="post-<?php the_ID(); ?>" <?php post_class( 'mb-0' ); ?>>
 
 		<div class="entry-content">
@@ -33,6 +39,14 @@ get_header();
 		</div>
 
 </article>
+
+</main>
+
+<?php do_action( 'tailpress_content_end' ); ?>
+
+</div>
+
+<?php do_action( 'tailpress_content_after' ); ?>
 
 <?php
 

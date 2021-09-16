@@ -1,12 +1,4 @@
-</main>
-
-<?php do_action( 'tailpress_content_end' ); ?>
-
-</div>
-
-<?php do_action( 'tailpress_content_after' ); ?>
-
-<footer id="colophon" class="site-footer py-12 bg-footer" role="contentinfo">
+<footer id="colophon" class="site-footer py-7 bg-footer relative z-10" role="contentinfo">
 
 	<div class="container flex flex-col lg:flex-row items-center justify-between mx-auto text-center text-white">
 		<div class="footer-logo w-full lg:w-1/3 mb-4 lg:mb-0"><?php the_custom_logo(); ?></div>
