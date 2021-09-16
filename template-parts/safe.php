@@ -7,7 +7,7 @@
 get_header();
 ?>
 
-<div id="content" class="relative site-content flex flex-col flex-grow safe-bg justify-center">
+<div id="content" class="relative site-content flex flex-col flex-grow safe-bg justify-center lg:min-h-screen"> 
 
             <div class="mx-auto container flex flex-col flex-grow items-stretch z-10 relative lg:max-h-[600px] lg:flex-row">
                 
