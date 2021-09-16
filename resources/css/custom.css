@@ -79,6 +79,10 @@
     @apply justify-around lg:justify-start lg:gap-6;
 }
 
+.list-btns>div {
+    @apply w-5/12 min-w-min whitespace-nowrap lg:w-auto;
+}
+
 .btn-fill a {
     @apply lg:py-4 lg:px-10;
 }
