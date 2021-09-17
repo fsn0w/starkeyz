@@ -5,6 +5,29 @@
  */
 
 get_header();
+
+$err = 0;
+$key = 0;
+
+if (isset($_GET['key'])) {
+    $err = '';
+    $key_get = $_GET['key'];
+    if (strlen($key_get)==18) {
+        $key_id = $wpdb->get_var( "SELECT key_id FROM `wp_starkeyz` WHERE key_number = '$key_get'" );
+
+        if ($key_id>=1 && $key_id<=10000) {
+            $key = $key_get;
+        }
+        else {
+            $err = 'Invalid KEY';
+        }
+
+    }
+    else {
+        $err = 'Invalid KEY';
+    }
+}
+
 ?>
 
 <div id="content" class="relative site-content flex flex-col flex-grow safe-bg justify-center lg:min-h-screen">
@@ -17,9 +40,23 @@ get_header();
                     <div class="text-center mb-6 lg:mb-0 lg:text-left">
                             <div class="inline-block mx-auto mb-4 lg:mb-0 lg:mx-0"><?php the_custom_logo(); ?></div>
                             <div class="w-2/3 mx-auto max-w-[240px] lg:hidden"><img src="/wp-content/uploads/safe-box.png" alt="Safe" width="475" height="607"></div>
-                            <h1 class="max-w-[230px] mx-auto mt-10 mb-4 lg:mx-0 lg:max-w-max lg:text-7xl">Welcome to safe #[10000]</h1>
-                            <span class="text-[11px] lg:text-[22px] lg:leading-6">This safe can only be opened by the [10000]<br/>
-                            Starkey holder (once we go live)</span>
+<?php 
+
+    if ($key!==0 && isset($key_id)) { 
+        $a = 'Welcome to safe #'.$key_id;
+        $b = 'This safe can only be opened by the <strong>'.$key.'</strong><br/>Starkey holder (once we go live)';
+    } elseif ($err!==0) { 
+        $a = 'Error !';
+        $b = $err;
+    } else { 
+        $a = 'Where is the key?';
+        $b = '';
+    } 
+ 
+ ?>
+                            <h1 class="max-w-[230px] mx-auto mt-10 mb-4 lg:mx-0 lg:max-w-max lg:text-7xl"><?=$a?></h1>
+                            <span class="text-[11px] lg:text-[22px] lg:leading-6"><?=$b?></span>
+
                     </div>
                     <div>
                         <div class="w-full text-center lg:float-right lg:w-96">
