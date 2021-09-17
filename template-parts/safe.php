@@ -7,7 +7,7 @@
 get_header();
 
 $err = 0;
-$key = 0; 
+$key = 0;
 
 if (isset($_GET['key'])) {
     $err = '';
