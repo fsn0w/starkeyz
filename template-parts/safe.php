@@ -9,8 +9,7 @@ get_header();
 $err = 0;
 $key = 0;
 
-if (isset($_GET['key'])) {
-    $err = '';
+if (isset($_GET['key']) && !empty($_GET['key'])) {
     $key_get = $_GET['key'];
     if (strlen($key_get)==18) {
         $key_id = $wpdb->get_var( "SELECT key_id FROM `wp_starkeyz` WHERE key_number = '$key_get'" );
