@@ -23,7 +23,7 @@ get_header();
                         <h2 class="uppercase text-4xl mb-2 lg:text-[5rem] lg:mb-6">50% off</h2>
                         <p class="uppercase text-sm mb-4 lg:mb-12 lg:text-2xl">Of launch price for</br> Rarity-level #10 Starkeyz:</p>
 
-                        <span class="uppercase font-zrnic text-base text-[#726780] relative pl-8 pr-5 inline-block lg:text-2xl"><em class="absolute w-full h-1 bg-[#726780] rotate-[-25deg] top-5 lg:top-3 left-0"></em><strong class="font-normal text-5xl lg:text-[5rem]">1.0</strong>eth</span> <span class="uppercase font-zrnic text-base lg:text-2xl inline-block"><strong class="font-normal text-5xl lg:text-[5rem]">0.5</strong>eth</span>
+                        <span class="uppercase font-zrnic text-base text-[#726780] relative pl-8 pr-5 inline-block lg:text-2xl"><em class="absolute w-full h-1 bg-[#726780] rotate-[-25deg] top-5 lg:top-10 left-0"></em><strong class="font-normal text-5xl lg:text-[5rem]">1.0</strong>eth</span> <span class="uppercase font-zrnic text-base lg:text-2xl inline-block"><strong class="font-normal text-5xl lg:text-[5rem]">0.5</strong>eth</span>
 
                         <p class="mt-3 mb-12 text-[0.7rem] lg:my-6 lg:text-base">limited to 5 starkeyz per invitation code</p>
                         <form action="/safe/" method="get" class="flex gap-2 max-w-sm relative mx-auto mb-10 lg:mb-6 lg:block lg:w-96">
