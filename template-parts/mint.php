@@ -128,7 +128,8 @@ $('#invitecode').submit(function (evt) {
                     $('#minting_section').removeClass('hidden').addClass("flex");
                 }
                 else {
-                    $("#icode").val('INCORRECT CODE !');
+                    $("#icode").val('');
+                    $("#icode").attr("placeholder", "INCORRECT CODE !");
                 }
             },
             error: function(data) {
