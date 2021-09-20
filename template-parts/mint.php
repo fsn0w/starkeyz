@@ -8,7 +8,7 @@ get_header();
 
 ?>
 
-<div id="content" class="relative site-content flex flex-grow flex-col mint-bg justify-center lg:min-h-screen overflow-y-hidden">
+<div id="content" class="relative site-content flex flex-grow flex-col mint-bg lg:min-h-screen overflow-y-hidden">
     <div class="absolute w-full h-full mint-bg-mob lg:hidden"><img src="/wp-content/uploads/moon-mob.png" alt="Starkeyz Moon" class="absolute top-2"></div>
 <!-- header -->
             <div class="mx-auto container flex flex-col z-10 relative mt-20 mb-16 lg:mb-0 lg:mt-32 lg:gap-8 lg:max-h-[600px] lg:flex-row">
@@ -26,12 +26,13 @@ get_header();
                         <span class="uppercase font-zrnic text-base text-[#726780] relative pl-8 pr-5 inline-block lg:text-2xl"><em class="absolute w-full h-1 bg-[#726780] rotate-[-25deg] top-5 lg:top-10 left-0"></em><strong class="font-normal text-5xl lg:text-[5rem]">1.0</strong>eth</span> <span class="uppercase font-zrnic text-base lg:text-2xl inline-block"><strong class="font-normal text-5xl lg:text-[5rem]">0.5</strong>eth</span>
 
                         <p class="mt-3 mb-12 text-[0.7rem] lg:my-6 lg:text-base">limited to 5 starkeyz per invitation code</p>
-                        <form action="/safe/" method="get" class="flex gap-2 max-w-sm relative mx-auto mb-10 lg:mb-6 lg:block lg:w-96">
-                            <input type="text" name="key" placeholder="Enter Your Invitation Code" class="font-zrnic bg-transparent text-center border-4 border-[#7E7AB1] rounded-xl text-white placeholder-white input-outline flex-grow text-sm lg:w-full lg:p-3 lg:text-base">
-                            <input type="submit" value="Submit" class="font-zrnic -right-28 bg-gradient-to-t from-[#5B587C] to-[#7E7AB1] py-3 px-4 lg:py-4 lg:px-6 rounded-xl cursor-pointer text-sm btn-fill lg:text-base lg:absolute">
+
+                        <form action="#" method="post" class="flex gap-2 max-w-sm relative mx-auto mb-10 lg:mb-6 lg:block lg:w-96" id="invitecode">
+                            <input type="text" name="icode" id="icode" placeholder="Enter Your Invitation Code" class="font-zrnic bg-transparent text-center border-4 border-[#7E7AB1] rounded-xl text-white placeholder-white input-outline flex-grow text-sm lg:w-full lg:p-3 lg:text-base">
+                            <input type="submit" id="icode_subm" value="Submit" class="font-zrnic -right-28 bg-gradient-to-t from-[#5B587C] to-[#7E7AB1] py-3 px-4 lg:py-4 lg:px-6 rounded-xl cursor-pointer text-sm btn-fill lg:text-base lg:absolute">
                         </form>
 
-    <a href="#" class="font-zrnic inline-block bg-gradient-to-tr from-[#FFC46B] via-[#FF82C3] to-[#9650C9] py-4 px-16 rounded-xl opacity-50 cursor-not-allowed">Mint My Starkey</a>
+    <a href="#minting" id="mintlink" class="font-zrnic inline-block bg-gradient-to-tr from-[#FFC46B] via-[#FF82C3] to-[#9650C9] py-4 px-16 rounded-xl opacity-50 cursor-not-allowed pointer-events-none">Mint My Starkey</a>
 
                     </div>
                 </div> 
@@ -39,9 +40,9 @@ get_header();
             </div>
 
 <!-- minting --> 
-        <div class="hidden flex-col items-center relative overflow-hidden lg:flex mb-48">
+        <div class="hidden flex-col items-center relative overflow-hidden mb-48" id="minting_section">
             <img src="/wp-content/uploads/mint-moon.png" width="1075" height="1076" alt="Starkeyz Moon" class="absolute ml-[1650px] top-10">
-            <div class="mx-auto container mt-60 mb-14 relative z-10 text-center">
+            <div class="mx-auto container mt-60 mb-14 relative z-10 text-center" id="minting">
                     <h2 class="h2-lines uppercase text-[6.25rem] mb-1">Minting</h2>
                     <p class="font-zrnic text-4xl">comming soon...</p>
             </div>
@@ -100,13 +101,43 @@ get_header();
                             </div>
                         </div>
                     </form>
-                    <div class="text-center"><a href="#" class="font-zrnic inline-block bg-gradient-to-tr from-[#7E7AB1] to-[#5B587C] py-4 px-16 rounded-xl cursor-not-allowed">Mint My Starkeyz</a></div>
+                    <div class="text-center"><a href="#" id="mintaction" class="font-zrnic inline-block bg-gradient-to-tr from-[#7E7AB1] to-[#5B587C] py-4 px-16 rounded-xl">Mint My Starkeyz</a></div>
                 </div>
             </div>
         </div>
 </div>
 
 <script>
+jQuery(document).ready(function($) {
+
+$('#invitecode').submit(function (evt) {
+    evt.preventDefault();
+    var code = $("#icode").val();
+    $("#icode").val('CHEKING...');
+        $.ajax({
+            url: '/wp-admin/admin-ajax.php?code='+code,
+            data: {
+            action: "check_invite_code_ajax", 
+                },
+            success: function(data) {
+                if (data!=='error') {
+                    $("#icode").val('YOUR CODE ACCEPTED !');
+                    $('#invitecode').addClass("opacity-50 pointer-events-none");
+                    $('#mintlink').removeClass("opacity-50 cursor-not-allowed pointer-events-none");
+                    $('#mintaction').attr("href", data);
+                    $('#minting_section').removeClass('hidden').addClass("flex");
+                }
+                /* $("#code_loader").hide(); */
+            },
+            error: function(data) {
+                $("#icode").val('INCORRECT CODE !');
+                console.log(data);
+            }
+    });
+});
+
+});
+
     	jQuery(document).ready(function($) {
 			$('.minus').click(function () {
 				var $input = $(this).parent().find('input');

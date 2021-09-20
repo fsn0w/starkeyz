@@ -145,3 +145,22 @@ add_filter( 'wp_check_filetype_and_ext', function($data, $file, $filename, $mime
   /* remove '...' (3 dots) filter */
 
   remove_filter( 'the_content', 'wptexturize' );
+
+  /* Mint Invitation Codes Check */
+
+  function check_invite_code_ajax() {
+
+    $code = $_GET["code"];
+	$post = new WP_Query('post_type=invitecode&post_status=publish&title='.$code);
+	if ($post->posts[0]->post_title == $code) {
+		echo 'https://starkeyz.club/mint/#minting';
+	}
+	else {
+		echo 'error';
+	}
+     die(); 
+
+  }
+
+add_action('wp_ajax_nopriv_check_invite_code_ajax', 'check_invite_code_ajax'); 
+add_action('wp_ajax_check_invite_code_ajax', 'check_invite_code_ajax');
