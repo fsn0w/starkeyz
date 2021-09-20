@@ -89,11 +89,12 @@
     @apply lg:py-4 lg:px-10;
 }
 
-.btn-fill a, .btn-outline a, .btn-outline-white a {
+.btn-fill a, .btn-outline a, .btn-outline-white a, .input-outline, .btn-fill {
     transition: .4s;
+    @apply outline-none;
 }
 
-.btn-fill a:hover, .btn-outline a:hover {
+.btn-fill a:hover, input.btn-fill:hover, .btn-outline a:hover, .input-outline:focus {
     -webkit-box-shadow: 0px 0px 10px 6px rgba(136, 123, 199, 0.45), rgba(136, 123, 199, 0.45) 0px 0px 10px 6px inset;
     -moz-box-shadow: 0px 0px 10px 6px rgba(136, 123, 199, 0.45), rgba(136, 123, 199, 0.45) 0px 0px 10px 6px inset;
     box-shadow: 0px 0px 10px 6px rgba(136, 123, 199, 0.45), rgba(136, 123, 199, 0.45) 0px 0px 10px 6px inset;
@@ -199,7 +200,7 @@
 
 /* 
 --------
-    MAIN
+    SAFE
 --------
 */
 
@@ -208,7 +209,7 @@
 */
 
 .safe-bg {
-    background-image: url(/wp-content/uploads/safe-bg2.jpg);
+    background-image: url(/wp-content/uploads/safe-bg3.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center bottom;
@@ -220,5 +221,34 @@
 }
 
 .safe-bg .container {
+    z-index:2;
+}
+
+/* 
+--------
+    MINT
+--------
+*/
+
+.mint-bg-mob {
+    background-image: url(/wp-content/uploads/mint-bg-mob.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center top;
+}
+
+.mint-bg {
+    background-image: url(/wp-content/uploads/mint-bg1.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    background-position: center top;
+}
+
+.mint-bg::after, .mint-bg-mob::after {
+    content:'';
+    @apply z-0 top-0 h-full w-full absolute bg-gradient-to-t from-[#171423] lg:via-transparent to-transparent;
+}
+
+.mint-bg .container {
     z-index:2;
 }

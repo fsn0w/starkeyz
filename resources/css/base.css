@@ -74,11 +74,32 @@ h2 em {
     @apply inline-block h-[50px] w-[120px] mb-[-10px] lg:h-[85px] lg:w-[210px] whitespace-nowrap overflow-hidden lg:mb-[-18px];
 }
 
+.h2-em-logo em.big-logo {
+    @apply block h-[70px] w-[100px] mb-2 mx-auto lg:mx-0 lg:inline-block lg:w-[284px] lg:h-[134px] lg:mb-[-26px];
+}
+
 .h2-em-logo.h2-lines::before, .h2-em-logo.h2-lines::after {
     top: 3rem;
 }
 
+.h3-em-logo em {
+    background-image: url(/wp-content/uploads/2021/09/starkeyz-logo.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    text-indent: 100%;
+    
+    @apply inline-block w-[72px] h-[31px] mb-[-6px] whitespace-nowrap overflow-hidden;
+}
+
 /* 
-    Texts
+    Forms
 */
 
+form .minus, form .plus {
+    @apply cursor-pointer align-middle text-center text-4xl leading-3 text-[#7E7AB1] px-2 -mt-2;
+}
+
+form .input-number {
+    @apply bg-transparent text-[#C2BEF2] text-xl border-[3px] border-[#7E7AB1] rounded-lg text-center w-9 outline-none;
+}
