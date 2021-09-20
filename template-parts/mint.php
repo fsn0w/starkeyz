@@ -127,10 +127,11 @@ $('#invitecode').submit(function (evt) {
                     $('#mintaction').attr("href", data);
                     $('#minting_section').removeClass('hidden').addClass("flex");
                 }
-                /* $("#code_loader").hide(); */
+                else {
+                    $("#icode").val('INCORRECT CODE !');
+                }
             },
             error: function(data) {
-                $("#icode").val('INCORRECT CODE !');
                 console.log(data);
             }
     });
