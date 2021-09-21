@@ -153,7 +153,7 @@ add_filter( 'wp_check_filetype_and_ext', function($data, $file, $filename, $mime
     $code = $_GET["code"];
 	$post = new WP_Query('post_type=invitecode&post_status=publish&title='.$code);
 	if ($post->posts[0]->post_title == $code) {
-		echo 'https://starkeyz.club/mint/#minting';
+		echo 'https://starkeyz.club/mint/#start';
 	}
 	else {
 		echo 'error';

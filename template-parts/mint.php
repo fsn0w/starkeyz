@@ -32,7 +32,7 @@ get_header();
                             <input type="submit" id="icode_subm" value="Submit" class="font-zrnic -right-28 bg-gradient-to-t from-[#5B587C] to-[#7E7AB1] py-3 px-4 lg:py-4 lg:px-6 rounded-xl cursor-pointer text-sm btn-fill lg:text-base lg:absolute">
                         </form>
 
-    <a href="#minting" id="mintlink" class="font-zrnic inline-block bg-gradient-to-tr from-[#FFC46B] via-[#FF82C3] to-[#9650C9] py-4 px-16 rounded-xl opacity-50 cursor-not-allowed pointer-events-none">Mint My Starkey</a>
+    <a href="#" id="mintlink" class="font-zrnic inline-block bg-gradient-to-tr from-[#FFC46B] via-[#FF82C3] to-[#9650C9] py-4 px-16 rounded-xl opacity-50 cursor-not-allowed pointer-events-none">Mint My Starkey</a>
 
                     </div>
                 </div> 
@@ -40,9 +40,9 @@ get_header();
             </div>
 
 <!-- minting --> 
-        <div class="hidden flex-col items-center relative overflow-hidden mb-48" id="minting_section">
+        <div class="flex flex-col items-center relative overflow-hidden mb-48" id="minting_section">
             <img src="/wp-content/uploads/mint-moon.png" width="1075" height="1076" alt="Starkeyz Moon" class="absolute ml-[1650px] top-10">
-            <div class="mx-auto container mt-60 mb-14 relative z-10 text-center" id="minting">
+            <div class="mx-auto container mt-60 mb-14 relative z-10 text-center">
                     <h2 class="h2-lines uppercase text-[6.25rem] mb-1">Minting</h2>
                     <p class="font-zrnic text-4xl">comming soon...</p>
             </div>
@@ -101,7 +101,8 @@ get_header();
                             </div>
                         </div>
                     </form>
-                    <div class="text-center"><a href="#" id="mintaction" class="font-zrnic inline-block bg-gradient-to-tr from-[#7E7AB1] to-[#5B587C] py-4 px-16 rounded-xl">Mint My Starkeyz</a></div>
+                    <div class="text-center">
+                        <a href="#" id="mintaction" class="font-zrnic inline-block bg-gradient-to-tr from-[#7E7AB1] to-[#5B587C] py-4 px-16 rounded-xl cursor-not-allowed pointer-events-none">Mint My Starkeyz</a></div>
                 </div>
             </div>
         </div>
@@ -113,7 +114,7 @@ jQuery(document).ready(function($) {
 $('#invitecode').submit(function (evt) {
     evt.preventDefault();
     var code = $("#icode").val();
-    $("#icode").val('CHEKING...');
+    $("#icode").val('VERIFYING');
         $.ajax({
             url: '/wp-admin/admin-ajax.php?code='+code,
             data: {
@@ -121,15 +122,16 @@ $('#invitecode').submit(function (evt) {
                 },
             success: function(data) {
                 if (data!=='error') {
-                    $("#icode").val('YOUR CODE ACCEPTED !');
+                    $("#icode").val('WELCOME! YOU CAN NOW MINT');
                     $('#invitecode').addClass("opacity-50 pointer-events-none");
                     $('#mintlink').removeClass("opacity-50 cursor-not-allowed pointer-events-none");
+                    $('#mintlink').attr("href", data);
                     $('#mintaction').attr("href", data);
                     $('#minting_section').removeClass('hidden').addClass("flex");
                 }
                 else {
                     $("#icode").val('');
-                    $("#icode").attr("placeholder", "INCORRECT CODE !");
+                    $("#icode").attr("placeholder", "CODE WASN'T RECOGNIZED");
                 }
             },
             error: function(data) {
