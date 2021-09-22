@@ -75,7 +75,7 @@ h2 em {
 }
 
 .h2-em-logo em.big-logo {
-    @apply block h-[70px] w-[100px] mb-2 mx-auto lg:mx-0 lg:inline-block lg:w-[284px] lg:h-[134px] lg:mb-[-26px];
+    @apply hidden h-[70px] w-[100px] mb-2 mx-auto lg:block lg:mx-0 lg:inline-block lg:w-[284px] lg:h-[134px] lg:mb-[-26px];
 }
 
 .h2-em-logo.h2-lines::before, .h2-em-logo.h2-lines::after {
@@ -89,7 +89,7 @@ h2 em {
     background-size: contain;
     text-indent: 100%;
     
-    @apply inline-block w-[72px] h-[31px] mb-[-6px] whitespace-nowrap overflow-hidden;
+    @apply inline-block w-[58px] h-[25px] mb-[-5px] whitespace-nowrap overflow-hidden lg:w-[105px] lg:h-[50px] lg:mb-[-9px];
 }
 
 /* 
@@ -97,9 +97,9 @@ h2 em {
 */
 
 form .minus, form .plus {
-    @apply cursor-pointer align-middle text-center text-4xl leading-3 text-[#7E7AB1] px-2 -mt-2;
+    @apply cursor-pointer align-middle text-center leading-3 text-[#7E7AB1] px-1 -mt-2 text-lg lg:px-2 lg:text-4xl;
 }
 
 form .input-number {
-    @apply bg-transparent text-[#C2BEF2] text-xl border-[3px] border-[#7E7AB1] rounded-lg text-center w-9 outline-none;
+    @apply bg-transparent text-[#C2BEF2] border-[#7E7AB1] rounded-lg text-center w-6 outline-none text-sm border lg:w-9 lg:border-[3px] lg:text-xl;
 }
