@@ -10,7 +10,7 @@ get_header();
 <div class="container">
       <div class="row">
         <div class="col-md-12">
-
+<br><br><br><br>
           <p>No wallet connected. Connect wallet to show accounts and their ETH balances.</p>
 
           <div class="alert alert-danger" id="alert-error-https" style="display: none">
@@ -79,7 +79,7 @@ get_header();
         </tr>
       </template>
     </div>
-
+    <br><br><br><br><br><br><br><br>
     <?php
 
 get_footer();
