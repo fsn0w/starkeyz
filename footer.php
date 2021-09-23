@@ -31,15 +31,6 @@
 
 <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
 
-    <script type="text/javascript" src="https://unpkg.com/web3@1.2.11/dist/web3.min.js"></script>
-    <script type="text/javascript" src="https://unpkg.com/web3modal@1.9.0/dist/index.js"></script>
-    <script type="text/javascript" src="https://unpkg.com/evm-chains@0.2.0/dist/umd/index.min.js"></script>
-    <script type="text/javascript" src="https://unpkg.com/@walletconnect/web3-provider@1.2.1/dist/umd/index.min.js"></script>
-    <script type="text/javascript" src="https://unpkg.com/fortmatic@2.0.6/dist/fortmatic.js"></script>
-
-    <!-- This is our example code -->
-    <script type="text/javascript" src="<?=tailpress_asset( 'js/example.js' ); ?>"></script>
-
 
 <script>
 
@@ -49,7 +40,25 @@ jQuery(".main-nav ul > .menu-item").click(function() {
 	}
 });
 
+const walletButton = document.querySelector('.wallet-btn');
+const showAccount = document.querySelector('.wallet-btn a');
 
+walletButton.addEventListener('click', () => {
+	if (typeof window.ethereum === 'undefined') {
+		showAccount.innerHTML = 'Install Metamask';
+		walletButton.classList.add("wallet-error");
+	}
+	else {
+		getAccount();
+	}
+});
+
+async function getAccount() {
+  const accounts = await ethereum.request({ method: 'eth_requestAccounts' });
+  const account = accounts[0];
+  showAccount.innerHTML = account.substring(0, 10)+'...';
+  walletButton.classList.add("wallet-connected");
+}
 
 </script>
 
