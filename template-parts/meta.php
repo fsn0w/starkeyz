@@ -62,10 +62,6 @@ get_header();
 
           <br>
 
-          <div class="well">
-            <p class="text-muted">See also the <a href="https://web3modal.com/">TypeScript and React example application</a></p>
-          </div>
-
         </div>
       </div>
     </div>
