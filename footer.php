@@ -51,6 +51,7 @@ walletButton.addEventListener('click', () => {
 	else {
 		getAccount();
 	}
+
 });
 
 async function getAccount() {
