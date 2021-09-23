@@ -4,13 +4,26 @@
  *
  */
 
-get_header();
+
 ?>
 
-<div class="container">
+
+<html>
+  <head>
+    <title>Web3modal example written in vanilla JavaScript and HTML</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Get some bootstrap default styles -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  </head>
+  <body>
+    <!-- Construct a Bootstrap layout -->
+    <div class="container">
       <div class="row">
         <div class="col-md-12">
-<br><br><br><br>
+          <h1>Web3modal example for vanille JavaScript and HTML</h1>
+
           <p>No wallet connected. Connect wallet to show accounts and their ETH balances.</p>
 
           <div class="alert alert-danger" id="alert-error-https" style="display: none">
@@ -62,6 +75,10 @@ get_header();
 
           <br>
 
+          <div class="well">
+            <p class="text-muted">See also the <a href="https://web3modal.com/">TypeScript and React example application</a></p>
+          </div>
+
         </div>
       </div>
     </div>
@@ -75,7 +92,7 @@ get_header();
         </tr>
       </template>
     </div>
-    <br><br><br><br><br><br><br><br>
+
     <?php
 
 get_footer();
