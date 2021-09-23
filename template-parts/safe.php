@@ -32,7 +32,7 @@ if ($key!==0 && isset($key_id)) {
     $b = '';
 } 
 
-if ($key!==0 || $err==0) {
+if ($key!==0 || $err===0) {
 
     get_header();
 echo $err;
