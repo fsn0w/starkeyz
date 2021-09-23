@@ -12,6 +12,8 @@ if (isset($_GET['key']) && !empty($_GET['key'])) {
     if (strlen($key_get)==18) {
         $key_id = $wpdb->get_var( "SELECT key_id FROM `wp_starkeyz` WHERE key_number = '$key_get'" );
 
+        echo 'keyid: '.$key_id;
+
         if ($key_id>=1 && $key_id<=10000) {
             $key = $key_get;
         }
@@ -34,7 +36,7 @@ if ($key!==0 && isset($key_id)) {
 
 if ($key!==0 || $err==0) {
 
-    echo $err;
+    get_header();
 
 ?>
 
