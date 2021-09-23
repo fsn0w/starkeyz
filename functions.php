@@ -164,3 +164,4 @@ add_filter( 'wp_check_filetype_and_ext', function($data, $file, $filename, $mime
 
 add_action('wp_ajax_nopriv_check_invite_code_ajax', 'check_invite_code_ajax'); 
 add_action('wp_ajax_check_invite_code_ajax', 'check_invite_code_ajax');
+

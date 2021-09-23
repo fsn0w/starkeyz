@@ -55,19 +55,19 @@
 						</a>
 					</div>
 				</div>
-
-				<?php
-				wp_nav_menu(
-					array(
-						'container_id'    => 'primary-menu',
-						'container_class' => 'hidden bg-[#171423] shadow-inner rounded-2xl mt-4 p-4 lg:shadow-none lg:mt-0 lg:p-0 lg:bg-transparent xl:bg-transparent lg:block font-zrnic',
-						'menu_class'      => 'lg:flex lg:-mx-4',
-						'theme_location'  => 'primary',
-						'li_class'        => 'text-lg lg:text-base lg:mx-2 border-transparent border hover:border hover:border-white hover:rounded-md px-2 py-1',
-						'fallback_cb'     => false,
-					)
-				);
-				?>
+					<?php
+					wp_nav_menu(
+						array(
+							'container_id'    => 'primary-menu',
+							'container_class' => 'main-nav hidden inline-block bg-[#171423] shadow-inner rounded-2xl mt-4 p-4 lg:shadow-none lg:mt-0 lg:p-0 lg:bg-transparent xl:bg-transparent lg:block font-zrnic',
+							'menu_class'      => 'items-center lg:flex lg:-mx-4',
+							'theme_location'  => 'primary',
+							'li_class'        => 'text-lg lg:text-base lg:mx-2 border-transparent border hover:border hover:border-white hover:rounded-md px-2 py-1',
+							'fallback_cb'     => false,
+						)
+					);
+					?>
 			</div>
 		</div>
 	</header>
+

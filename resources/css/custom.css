@@ -64,6 +64,18 @@
     Buttons
 */
 
+.wallet-btn {
+    @apply text-center hover:border-transparent !important;
+}
+
+.wallet-btn>a {
+    @apply font-zrnic inline-block bg-gradient-to-tr from-[#7E7AB1] to-[#5B587C] py-2 px-8 rounded-xl text-sm lg:text-base lg:px-6 !important;
+}
+
+.wallet-error>a {
+    @apply bg-gradient-to-tr from-[red] to-[orange] pointer-events-none !important;
+}
+
 .star-btn a {
     @apply w-full text-[13px] lg:w-auto lg:text-xl lg:min-w-[175px];
 }

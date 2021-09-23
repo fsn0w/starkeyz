@@ -21,11 +21,37 @@
 		<div class="w-full lg:w-1/3 text-[11px] lg:text-base mb-4 lg:mb-0">@2021 - All rights reserved to Starkeyz</div>
 	</div>
 
+
+
 </footer>
 
 </div>
 
 <?php wp_footer(); ?>
+
+<script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+
+    <script type="text/javascript" src="https://unpkg.com/web3@1.2.11/dist/web3.min.js"></script>
+    <script type="text/javascript" src="https://unpkg.com/web3modal@1.9.0/dist/index.js"></script>
+    <script type="text/javascript" src="https://unpkg.com/evm-chains@0.2.0/dist/umd/index.min.js"></script>
+    <script type="text/javascript" src="https://unpkg.com/@walletconnect/web3-provider@1.2.1/dist/umd/index.min.js"></script>
+    <script type="text/javascript" src="https://unpkg.com/fortmatic@2.0.6/dist/fortmatic.js"></script>
+
+    <!-- This is our example code -->
+    <script type="text/javascript" src="<?=tailpress_asset( 'js/example.js' ); ?>"></script>
+
+
+<script>
+
+jQuery(".main-nav ul > .menu-item").click(function() {
+	if (jQuery(this).hasClass('wallet-connected')) {
+	    jQuery(this).find('.sub-menu').toggle("slow");
+	}
+});
+
+
+
+</script>
 
 </body>
 </html>

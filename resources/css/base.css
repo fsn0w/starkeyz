@@ -31,6 +31,10 @@ html {
 135deg,rgb(76,66,100) 0%,rgb(112,74,153) 50%,rgb(82,67,106) 100%);
 }
 
+.sub-menu {
+    @apply hidden absolute w-full text-right;
+}
+
 /* 
     Titles
 */
