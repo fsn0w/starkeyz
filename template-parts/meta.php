@@ -10,7 +10,6 @@ get_header();
 <div class="container">
       <div class="row">
         <div class="col-md-12">
-          <h1>Web3modal example for vanille JavaScript and HTML</h1>
 
           <p>No wallet connected. Connect wallet to show accounts and their ETH balances.</p>
 
