@@ -56,7 +56,7 @@ walletButton.addEventListener('click', () => {
 async function getAccount() {
   const accounts = await ethereum.request({ method: 'eth_requestAccounts' });
   const account = accounts[0];
-  showAccount.innerHTML = account.substring(0, 10)+'...';
+  showAccount.innerHTML = account.substring(0, 4)+'...'+account.slice(-4);
   walletButton.classList.add("wallet-connected");
 }
 
