@@ -35,7 +35,6 @@ if ($key!==0 && isset($key_id)) {
 if ($key!==0 || $err===0) {
 
     get_header();
-echo $err;
 ?>
 
 <div id="content" class="relative site-content flex flex-col flex-grow safe-bg justify-center lg:min-h-screen">
