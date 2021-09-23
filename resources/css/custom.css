@@ -73,7 +73,7 @@
 }
 
 .wallet-error>a {
-    @apply bg-gradient-to-tr from-[red] to-[orange] pointer-events-none !important;
+    @apply bg-gradient-to-tr from-[red] to-[orange] pointer-events-none !important; 
 }
 
 .star-btn a {
