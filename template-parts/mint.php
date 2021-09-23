@@ -9,8 +9,10 @@ get_header();
 ?>
 
 <div id="content" class="relative site-content flex flex-grow flex-col mint-bg lg:min-h-screen overflow-y-hidden">
-    <div class="absolute w-full h-full mint-bg-mob lg:hidden"><img src="/wp-content/uploads/moon-mob.png" alt="Starkeyz Moon" class="absolute top-2"></div>
+    
 <!-- header -->
+        <div class="w-full relative">
+            <div class="absolute w-full h-full mint-bg-mob lg:hidden"><img src="/wp-content/uploads/moon-mob.png" alt="Starkeyz Moon" class="absolute top-2"></div>
             <div class="mx-auto container flex flex-col z-10 relative mt-32 mb-0 lg:mb-0 lg:mt-32 lg:gap-8 lg:max-h-[600px] lg:flex-row">
                 <div class="lg:block">
                     <h2 class="h2-em-logo uppercase text-[3.2rem] mb-4 text-center relative z-10 lg:mb-0 lg:text-right lg:w-[573px] lg:text-[5rem] lg:leading-[5.5rem]"><em class="big-logo">Starkey</em> Pre-sale</h2>
@@ -38,17 +40,17 @@ get_header();
                 </div> 
 
             </div>
+        </div>
 
 <!-- minting --> 
-        <div class="flex flex-col items-center relative overflow-hidden mb-48" id="minting_section">
-            <img src="/wp-content/uploads/mint-moon.png" width="1075" height="1076" alt="Starkeyz Moon" class="absolute ml-[1650px] top-10">
-            <div class="mx-auto container mt-20 mb-6 relative z-10 text-center lg:mb-14 lg:mt-60">
+        <div class="flex flex-col items-center relative overflow-hidden bg-[#171423] lg:bg-transparent lg:mb-48" id="minting_section">
+            <img src="/wp-content/uploads/mint-moon.png" width="1075" height="1076" alt="Starkeyz Moon" class="absolute z-10 ml-[400px] w-[400px] -bottom-10 lg:bottom-0 lg:w-auto lg:ml-[1650px] lg:top-10">
+            <div class="mx-auto px-12 mt-20 mb-6 relative z-10 text-center lg:container lg:mb-14 lg:mt-60">
                     <h2 class="h2-lines uppercase text-[3.2rem] pt-10 pb-3 lg:pt-0 lg:text-[6.25rem] mb-1">Minting</h2>
                     <p class="font-zrnic text-[0.9rem] lg:text-4xl">comming soon...</p>
             </div>
-            <div class="flex items-center justify-center mx-auto relative z-10 px-4 lg:container">
-                <img src="/wp-content/uploads/rocket.svg" alt="Starkeyz Rocket" class="absolute -left-96">
-                <div>
+            <div class="relative z-10 px-4 lg:container">
+                <div class="flex flex-col items-center justify-center">
                     <h3 class="font-zrnic text-[0.9rem] text-center uppercase h3-em-logo mb-2 lg:mb-0 lg:text-3xl ">Choose the <em>Starkey</em> you would like to mint</h3>
                     <p class="text-center mb-4 w-64 mx-auto lg:w-auto">Minting price tiers are determined by the rarity level of the Starkey</p>
                     <p class="text-center uppercase mb-6">mint limit: X</p>
@@ -102,8 +104,10 @@ get_header();
                         </div>
                     </form>
                     <div class="text-center">
-                        <a href="#" id="mintaction" class="font-zrnic inline-block bg-gradient-to-tr from-[#7E7AB1] to-[#5B587C] py-4 px-8 rounded-xl cursor-not-allowed pointer-events-none text-sm lg:text-base lg:px-16">Mint My Starkeyz</a></div>
+                        <a href="#" id="mintaction" class="font-zrnic inline-block bg-gradient-to-tr from-[#7E7AB1] to-[#5B587C] py-4 px-8 rounded-xl cursor-not-allowed pointer-events-none text-sm lg:text-base lg:px-16">Mint My Starkeyz</a>
+                    </div>
                 </div>
+                <img src="/wp-content/uploads/rocket.svg" alt="Starkeyz Rocket" class="w-36 mb-5 mt-16 lg:absolute lg:m-0 lg:w-auto lg:top-1/3 lg:-left-16 lg:inline-block"> 
             </div>
         </div>
 </div>
