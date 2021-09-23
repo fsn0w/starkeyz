@@ -4,8 +4,6 @@
  *
  */
 
-get_header();
-
 $err = 0;
 $key = 0;
 
@@ -20,12 +18,23 @@ if (isset($_GET['key']) && !empty($_GET['key'])) {
         else {
             $err = 'Invalid KEY';
         }
-
     }
     else {
         $err = 'Invalid KEY';
     }
 }
+
+if ($key!==0 && isset($key_id)) { 
+    $a = 'Welcome to safe #'.$key_id;
+    $b = 'This safe can only be opened by the <strong>'.$key.'</strong><br/>Starkey holder (once we go live)';
+} elseif ($err==0) { 
+    $a = 'Where is the key?';
+    $b = '';
+} 
+
+if ($key!==0 || $err==0) {
+
+    get_header();
 
 ?>
 
@@ -39,20 +48,6 @@ if (isset($_GET['key']) && !empty($_GET['key'])) {
                     <div class="text-center mb-6 lg:mb-0 lg:text-left">
                             <div class="inline-block mx-auto mb-4 lg:mb-0 lg:mx-0"><?php the_custom_logo(); ?></div>
                             <div class="w-2/3 mx-auto max-w-[240px] lg:hidden"><img src="/wp-content/uploads/safe-box.png" alt="Safe" width="475" height="607"></div>
-<?php 
-
-    if ($key!==0 && isset($key_id)) { 
-        $a = 'Welcome to safe #'.$key_id;
-        $b = 'This safe can only be opened by the <strong>'.$key.'</strong><br/>Starkey holder (once we go live)';
-    } elseif ($err!==0) { 
-        $a = 'Error !';
-        $b = $err;
-    } else { 
-        $a = 'Where is the key?';
-        $b = '';
-    } 
- 
- ?>
                             <h1 class="max-w-[230px] mx-auto mt-10 mb-4 lg:mx-0 lg:max-w-max lg:text-7xl"><?=$a?></h1>
                             <span class="text-[11px] lg:text-[22px] lg:leading-6"><?=$b?></span>
 
@@ -72,5 +67,11 @@ if (isset($_GET['key']) && !empty($_GET['key'])) {
 </div>
 
 <?php
+
+} else {
+
+    header('Location: /safe-error/');
+
+}
 
 get_footer();

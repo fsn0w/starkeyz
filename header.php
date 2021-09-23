@@ -18,7 +18,7 @@
 	<?php do_action( 'tailpress_header' ); ?>
 
 	<header class="absolute w-full z-10">
-		<div class="mx-auto container <?=(is_page_template('template-parts/safe.php')?'hidden':'');?> ?>">
+		<div class="mx-auto container <?= (is_page_template('template-parts/safe.php')?'hidden':''); ?>">
 			<div class="lg:flex lg:justify-between lg:items-center py-3 lg:py-6">
 				<div class="flex justify-between items-center">
 					<div>
