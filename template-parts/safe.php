@@ -34,7 +34,7 @@ if ($key!==0 && isset($key_id)) {
 
 if ($key!==0 || $err==0) {
 
-    get_header();
+    echo $err;
 
 ?>
 
