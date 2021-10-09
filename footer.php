@@ -29,7 +29,7 @@
 
 <?php wp_footer(); ?>
 
-<script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/web3/3.0.0-rc.5/web3.min.js"></script>
 
 <script>
 	jQuery(".main-nav ul > .menu-item").click(function() {
@@ -46,8 +46,11 @@ let web3;
 let contactAddress = '0x014335a2E12C23E450f7ba5E6915b7e0195E6968';
 let abi = [{"inputs":[{"internalType":"string","name":"name","type":"string"},{"internalType":"string","name":"symbol","type":"string"}],"stateMutability":"nonpayable","type":"constructor"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"owner","type":"address"},{"indexed":true,"internalType":"address","name":"approved","type":"address"},{"indexed":true,"internalType":"uint256","name":"tokenId","type":"uint256"}],"name":"Approval","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"owner","type":"address"},{"indexed":true,"internalType":"address","name":"operator","type":"address"},{"indexed":false,"internalType":"bool","name":"approved","type":"bool"}],"name":"ApprovalForAll","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"previousOwner","type":"address"},{"indexed":true,"internalType":"address","name":"newOwner","type":"address"}],"name":"OwnershipTransferred","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"from","type":"address"},{"indexed":true,"internalType":"address","name":"to","type":"address"},{"indexed":true,"internalType":"uint256","name":"tokenId","type":"uint256"}],"name":"Transfer","type":"event"},{"inputs":[],"name":"MAX_KEYS","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"MAX_KEYS_IN_LEVEL","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"REVEAL_TIMESTAMP","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"to","type":"address"},{"internalType":"uint256","name":"tokenId","type":"uint256"}],"name":"approve","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"owner","type":"address"}],"name":"balanceOf","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"baseURI","outputs":[{"internalType":"string","name":"","type":"string"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"flipPrivateSaleState","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[],"name":"flipSaleState","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"tokenId","type":"uint256"}],"name":"getApproved","outputs":[{"internalType":"address","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"owner","type":"address"},{"internalType":"address","name":"operator","type":"address"}],"name":"isApprovedForAll","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"maxKeyPurchase","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"numberOfTokens","type":"uint256"},{"internalType":"uint8","name":"level","type":"uint8"}],"name":"mintKey","outputs":[],"stateMutability":"payable","type":"function"},{"inputs":[],"name":"name","outputs":[{"internalType":"string","name":"","type":"string"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"owner","outputs":[{"internalType":"address","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"tokenId","type":"uint256"}],"name":"ownerOf","outputs":[{"internalType":"address","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"privateSaleIsActive","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"renounceOwnership","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[],"name":"reserveKeys","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"from","type":"address"},{"internalType":"address","name":"to","type":"address"},{"internalType":"uint256","name":"tokenId","type":"uint256"}],"name":"safeTransferFrom","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"from","type":"address"},{"internalType":"address","name":"to","type":"address"},{"internalType":"uint256","name":"tokenId","type":"uint256"},{"internalType":"bytes","name":"_data","type":"bytes"}],"name":"safeTransferFrom","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[],"name":"saleIsActive","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"operator","type":"address"},{"internalType":"bool","name":"approved","type":"bool"}],"name":"setApprovalForAll","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"string","name":"baseURI","type":"string"}],"name":"setBaseURI","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[],"name":"startingIndex","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"startingIndexBlock","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"bytes4","name":"interfaceId","type":"bytes4"}],"name":"supportsInterface","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"symbol","outputs":[{"internalType":"string","name":"","type":"string"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"index","type":"uint256"}],"name":"tokenByIndex","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"owner","type":"address"},{"internalType":"uint256","name":"index","type":"uint256"}],"name":"tokenOfOwnerByIndex","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"tokenId","type":"uint256"}],"name":"tokenURI","outputs":[{"internalType":"string","name":"","type":"string"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"totalSupply","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint8","name":"level","type":"uint8"}],"name":"totalSupplyByLevel","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"from","type":"address"},{"internalType":"address","name":"to","type":"address"},{"internalType":"uint256","name":"tokenId","type":"uint256"}],"name":"transferFrom","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"newOwner","type":"address"}],"name":"transferOwnership","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[],"name":"withdraw","outputs":[],"stateMutability":"nonpayable","type":"function"}];
 
+let walletBtn = jQuery('.wallet-btn');
+let walletBtnMsg = jQuery('.wallet-btn a');
+
 function detectMetaMask() {
-            if (typeof window.ethereum !== 'undefined') {                
+            if (typeof window.ethereum !== 'undefined') {          
                 return true
             } else {               
                 return false
@@ -56,54 +59,78 @@ function detectMetaMask() {
 
 function handleAccountsChanged(accounts) {
             console.log('Calling HandleChanged')
-            console.log(accounts)
+
             if (accounts.length === 0) {
                 console.log('Please connect to MetaMask.');
-                jQuery('.wallet-btn').html('Connect with Metamask')
+                walletBtnMsg.html('Connect with Metamask')
             } else if (accounts[0] !== currentAccount) {
                 currentAccount = accounts[0];
-				jQuery('.wallet-btn a').html(currentAccount.substring(0, 4)+'...'+currentAccount.slice(-4))
-  				jQuery('.wallet-btn').addClass('wallet-connected')
-                jQuery('#status').html('')
+				walletBtnMsg.html(currentAccount.substring(0, 4)+'...'+currentAccount.slice(-4))
+				walletBtn.addClass('wallet-connected')
                 
                 if(currentAccount != null) {
                     // Set the button label
-					jQuery('.wallet-btn a').html(currentAccount.substring(0, 4)+'...'+currentAccount.slice(-4))
-  					jQuery('.wallet-btn').addClass('wallet-connected')
+					walletBtnMsg.html(currentAccount.substring(0, 4)+'...'+currentAccount.slice(-4))
+					walletBtn.addClass('wallet-connected')
                 }
+
+				// goto Rinkeby network 
+				ethereum.request({ method: 'wallet_switchEthereumChain', params:[{chainId: '0x4'}]});
+
             }
             console.log('WalletAddress in HandleAccountChanged ='+currentAccount)
         }
 
 
-function connect() {
+async function connect() {
             console.log('Calling connect()')
             ethereum
             .request({ method: 'eth_requestAccounts' })
             .then(handleAccountsChanged)
             .catch((err) => {
-            if (err.code === 4001) {
-                // EIP-1193 userRejectedRequest error
-                // If this happens, the user rejected the connection request.
-                console.log('Please connect to MetaMask.');
-                jQuery('#status').html('You refused to connect Metamask')
-            } else {
+
                 console.error(err);
-            }
+            
             });
+
+			window.ethereum.enable(); // get permission to access accounts
+
+			// detect Metamask account change
+			window.ethereum.on('accountsChanged', function (accounts) {
+				handleAccountsChanged(accounts);
+			});
+
+			// detect Network account change
+			window.ethereum.on('networkChanged', function(networkId){
+				console.log('networkChanged',networkId);
+				if (networkId != 4) {
+					walletBtnMsg.html('Rinkeby Network Only')
+					walletBtn.addClass('wallet-error')
+				}
+				else {
+					walletBtnMsg.html(currentAccount.substring(0, 4)+'...'+currentAccount.slice(-4))
+					walletBtn.removeClass('wallet-error')
+					walletBtn.addClass('wallet-connected')
+				}
+			});
+
         }
 
-        async function getValue() {
+async function getValue() {
             console.log('GetValue')
-            const contractFirst = new web3.eth.Contract(
+            const starkeyContract = new web3.eth.Contract(
                         abi,
                         contactAddress
             );
-
-            contractFirst.methods.getValue().call().then(function (result) {                
+			
+			console.log(starkeyContract);
+/*
+            starkeyContract.methods.MAX_KEYS().call().then(function (result) {                
                 $('#getValue').html(result)
             });
+			*/
         }
+
 
 </script>
 <script>
@@ -111,13 +138,13 @@ function connect() {
 jQuery(document).ready(function() {
             m = detectMetaMask()
             if(m) {
-                connect() 
+                //connect() 
             } else {
-				jQuery('.wallet-btn a').html('Install Metamask')
-				jQuery('.wallet-btn').addClass('wallet-error')
+				walletBtnMsg.html('Install Metamask')
+				walletBtn.addClass('wallet-error')
             }
 
-            jQuery('.wallet-btn').click(function() {
+            walletBtn.click(function() {
                 connect()
             });
             
@@ -126,8 +153,12 @@ jQuery(document).ready(function() {
                 web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:7545"));
             } catch (error) {
                 alert(error)
-            }            
-            
+            }
+
+/*
+			const starkeyContract = new web3.eth.Contract( abi, contactAddress ); 
+			starkeyContract.methods.mintKey(numberOfTokens, level).send({ from: ethereum.selectedAddress, value: web3.utils.toWei(amountToSent, "ether"), }).then(receipt=> {console.log(receipt)}); 
+      */      
             //Fetch Value from Smart Contract
             getValue()
 })
@@ -160,6 +191,7 @@ async function getAccount() {
 
 
 </script>
+
 
 </body>
 </html>
