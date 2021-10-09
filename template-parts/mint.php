@@ -35,7 +35,8 @@ get_header();
                         </form>
 
     <a href="#" id="mintlink" class="font-zrnic text-sm inline-block bg-gradient-to-tr from-[#FFC46B] via-[#FF82C3] to-[#9650C9] py-4 px-8 rounded-xl opacity-50 cursor-not-allowed pointer-events-none lg:text-base lg:px-16">Mint My Starkey</a>
-
+    <div id="status"></div>
+    <div id="getValue"></div>
                     </div>
                 </div> 
 
