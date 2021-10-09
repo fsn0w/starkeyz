@@ -62,7 +62,8 @@ function handleAccountsChanged(accounts) {
                 jQuery('.wallet-btn').html('Connect with Metamask')
             } else if (accounts[0] !== currentAccount) {
                 currentAccount = accounts[0];
-                jQuery('.wallet-btn').html(currentAccount)
+				jQuery('.wallet-btn a').html(currentAccount.substring(0, 4)+'...'+currentAccount.slice(-4))
+  				jQuery('.wallet-btn').addClass('wallet-connected')
                 jQuery('#status').html('')
                 
                 if(currentAccount != null) {
