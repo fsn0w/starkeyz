@@ -34,7 +34,7 @@ get_header();
                             <input type="submit" id="icode_subm" value="Submit" class="font-zrnic -right-28 bg-gradient-to-t from-[#5B587C] to-[#7E7AB1] py-3 px-4 lg:py-4 lg:px-6 rounded-xl cursor-pointer text-sm btn-fill lg:text-base lg:absolute">
                         </form>
 
-    <a href="#" id="mintlink" class="font-zrnic text-sm inline-block bg-gradient-to-tr from-[#FFC46B] via-[#FF82C3] to-[#9650C9] py-4 px-8 rounded-xl opacity-50 cursor-not-allowed pointer-events-none lg:text-base lg:px-16">Mint My Starkey</a>
+    <a href="#mint" id="mintlink" class="font-zrnic text-sm inline-block bg-gradient-to-tr from-[#FFC46B] via-[#FF82C3] to-[#9650C9] py-4 px-8 rounded-xl opacity-50 cursor-not-allowed pointer-events-none lg:text-base lg:px-16">Mint My Starkey</a>
     <div id="status"></div>
     <div id="getValue"></div>
                     </div>
@@ -105,7 +105,7 @@ get_header();
                         </div>
                     </form>
                     <div class="text-center">
-                        <a href="#" id="mintaction" class="font-zrnic inline-block bg-gradient-to-tr from-[#7E7AB1] to-[#5B587C] py-4 px-8 rounded-xl cursor-not-allowed pointer-events-none text-sm lg:text-base lg:px-16">Mint My Starkeyz</a>
+                        <a href="#mint" id="mintaction" class="font-zrnic inline-block bg-gradient-to-tr from-[#7E7AB1] to-[#5B587C] py-4 px-8 rounded-xl opacity-50 cursor-not-allowed pointer-events-none text-sm lg:text-base lg:px-16">Mint My Starkeyz</a>
                     </div>
                 </div>
                 <img src="/wp-content/uploads/rocket.svg" alt="Starkeyz Rocket" class="w-36 mb-5 mt-16 lg:absolute lg:m-0 lg:w-auto lg:top-1/3 lg:-left-16 lg:inline-block"> 
@@ -114,6 +114,11 @@ get_header();
 </div>
 
 <script>
+
+function callback(data) {
+  jQuery("#mint_script").html(data);
+}
+
 jQuery(document).ready(function($) {
 
 $('#invitecode').submit(function (evt) {
@@ -127,11 +132,13 @@ $('#invitecode').submit(function (evt) {
                 },
             success: function(data) {
                 if (data!=='error') {
+                    callback(data);
                     $("#icode").val('WELCOME! YOU CAN NOW MINT');
                     $('#invitecode').addClass("opacity-50 pointer-events-none");
                     $('#mintlink').removeClass("opacity-50 cursor-not-allowed pointer-events-none");
-                    $('#mintlink').attr("href", data);
-                    $('#mintaction').attr("href", data);
+                    $('#mintaction').removeClass("opacity-50 cursor-not-allowed pointer-events-none");
+                    //$('#mintlink').attr("href", data);
+                    //$('#mintaction').attr("href", data);
                     $('#minting_section').removeClass('hidden').addClass("flex");
                 }
                 else {
