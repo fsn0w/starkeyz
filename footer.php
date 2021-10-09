@@ -68,7 +68,8 @@ function handleAccountsChanged(accounts) {
                 
                 if(currentAccount != null) {
                     // Set the button label
-                    jQuery('.wallet-btn').html(currentAccount)
+					jQuery('.wallet-btn a').html(currentAccount.substring(0, 4)+'...'+currentAccount.slice(-4))
+  					jQuery('.wallet-btn').addClass('wallet-connected')
                 }
             }
             console.log('WalletAddress in HandleAccountChanged ='+currentAccount)
