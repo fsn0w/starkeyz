@@ -42,7 +42,6 @@
 
 let currentAccount = null;
 let web3;
-
 let walletBtn = jQuery('.wallet-btn');
 let walletBtnMsg = jQuery('.wallet-btn a');
 let mintBtn = jQuery('#mintaction');
@@ -131,8 +130,8 @@ jQuery(document).ready(function() {
             });
             
 
-            try {            
-                web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:7545"));
+            try {           
+                web3 = new Web3(Web3.givenProvider);
             } catch (error) {
                 alert(error)
             }
