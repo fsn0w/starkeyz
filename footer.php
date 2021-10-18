@@ -120,8 +120,8 @@ function levels() {
 		token.methods.totalSupplyByLevel(i)
 		.call()
 		.then(function(result){
-			var count = (result<1000?0:result-1000);
-			var msg = (count!=0?'Only '+count+' left':'0 left [I was too popular..]');
+			var count = (1000-result);
+			var msg = (count>0?'Only '+count+' left':count+' left [I was too popular..]');
 			jQuery('#mintkeyz #level'+(i+1)+'_count').html(' - '+msg);
 			jQuery('#mintkeyz #level'+(i+1)).data('count',count);
 		});
