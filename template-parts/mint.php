@@ -158,7 +158,7 @@ $('#invitecode').submit(function (evt) {
 				$input.val(count);
 				$input.change();
 
-                if (parseInt($input.val())<5) {
+                if (parseInt($input.val())<5 && $input.attr('id')=='level10') {
                     $('#level10_limit').html( 5 - parseInt($input.val()) );
                 }
 
@@ -170,7 +170,7 @@ $('#invitecode').submit(function (evt) {
 				    $input.val(parseInt($input.val()) + 1);
                     $input.change();
                 }
-                if (parseInt($input.val())<5) {
+                if (parseInt($input.val())<5 && $input.attr('id')=='level10') {
                     $('#level10_limit').html( 5 - parseInt($input.val()) );
                 }
 				return false;
