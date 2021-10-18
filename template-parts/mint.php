@@ -54,7 +54,7 @@ get_header();
                 <div class="flex flex-col items-center justify-center">
                     <h3 class="font-zrnic text-[0.9rem] text-center uppercase h3-em-logo mb-2 lg:mb-0 lg:text-3xl ">Choose the <em>Starkey</em> you would like to mint</h3>
                     <p class="text-center mb-4 w-64 mx-auto lg:w-auto">Minting price tiers are determined by the rarity level of the Starkey</p>
-                    <p class="text-center uppercase mb-6">mint limit: X</p>
+                    <p class="text-center uppercase mb-6">mint limit: <span id="level10_limit">5</span></p>
                     <form action="" method="get" class="flex gap-2 mb-16 lg:gap-6" id="mintkeyz">
                         <div class="flex flex-col justify-between">
                             <span class="uppercase text-center text-xs lg:text-2xl">Rarest</span>
@@ -157,6 +157,11 @@ $('#invitecode').submit(function (evt) {
 				count = count < 0 ? 0 : count;
 				$input.val(count);
 				$input.change();
+
+                if (parseInt($input.val())<5) {
+                    $('#level10_limit').html( 5 - parseInt($input.val()) );
+                }
+
 				return false;
 			});
 			$('.plus').click(function () {
@@ -164,6 +169,9 @@ $('#invitecode').submit(function (evt) {
                 if (parseInt($input.val())<10) {
 				    $input.val(parseInt($input.val()) + 1);
                     $input.change();
+                }
+                if (parseInt($input.val())<5) {
+                    $('#level10_limit').html( 5 - parseInt($input.val()) );
                 }
 				return false;
 			});

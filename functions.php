@@ -158,7 +158,7 @@ add_filter( 'wp_check_filetype_and_ext', function($data, $file, $filename, $mime
 		jQuery(\'.discount\').html("0.5");
 		jQuery("#mintkeyz #level10").data(\'price\',\'0.5\');
 		mintInv.click(function() {
-			mint("1","10","0.5")
+			mint("1","10","0.5");
 		})
 ';
 	}
