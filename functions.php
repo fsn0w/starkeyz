@@ -154,9 +154,14 @@ add_filter( 'wp_check_filetype_and_ext', function($data, $file, $filename, $mime
 	$post = new WP_Query('post_type=invitecode&post_status=publish&title='.$code);
 	if ($post->posts[0]->post_title == $code) {
 		echo '
-		let mintInv = jQuery(\'#mint_invitation\');
-		jQuery(\'.discount\').html("0.5");
-		jQuery("#mintkeyz #level10").data(\'price\',\'0.5\');
+		let mintInv = jQuery("#mint_invitation");
+		
+		jQuery("#mint_limit").html("5");
+		jQuery("#mint_limit").attr("data-max","5");
+		jQuery("#level10").val("0");
+
+		jQuery(".discount").html("0.5");
+		jQuery("#mintkeyz #level10").data("price","0.5");
 		mintInv.click(function() {
 			mint("1","10","0.5");
 		})

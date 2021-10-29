@@ -54,7 +54,7 @@ get_header();
                 <div class="flex flex-col items-center justify-center">
                     <h3 class="font-zrnic text-[0.9rem] text-center uppercase h3-em-logo mb-2 lg:mb-0 lg:text-3xl ">Choose the <em>Starkey</em> you would like to mint</h3>
                     <p class="text-center mb-4 w-64 mx-auto lg:w-auto">Minting price tiers are determined by the rarity level of the Starkey</p>
-                    <p class="text-center uppercase mb-6">mint limit: <span id="level10_limit">5</span></p>
+                    <p class="text-center uppercase mb-6">mint limit: <span id="mint_limit" data-max="10">10</span></p>
                     <form action="" method="get" class="flex gap-2 mb-16 lg:gap-6" id="mintkeyz">
                         <div class="flex flex-col justify-between">
                             <span class="uppercase text-center text-xs lg:text-2xl">Rarest</span>
@@ -151,27 +151,30 @@ $('#invitecode').submit(function (evt) {
 });
 
     	jQuery(document).ready(function($) {
+
 			$('.minus').click(function () {
+                var mintLimit = $('#mint_limit').attr('data-max');
 				var $input = $(this).parent().find('input');
 				var count = parseInt($input.val()) - 1;
 				count = count < 0 ? 0 : count;
 				$input.val(count);
 				$input.change();
 
-                if (parseInt($input.val())<5 && $input.attr('id')=='level10') {
-                    $('#level10_limit').html( 5 - parseInt($input.val()) );
+                if (parseInt($input.val())<mintLimit && $input.attr('id')=='level10') {
+                    $('#mint_limit').html( mintLimit - parseInt($input.val()) );
                 }
 
 				return false;
 			});
 			$('.plus').click(function () {
+                var mintLimit = $('#mint_limit').attr('data-max');
 				var $input = $(this).parent().find('input');
                 if (parseInt($input.val())<10) {
 				    $input.val(parseInt($input.val()) + 1);
                     $input.change();
                 }
-                if (parseInt($input.val())<5 && $input.attr('id')=='level10') {
-                    $('#level10_limit').html( 5 - parseInt($input.val()) );
+                if (parseInt($input.val())<mintLimit && $input.attr('id')=='level10') {
+                    $('#mint_limit').html( mintLimit - parseInt($input.val()) );
                 }
 				return false;
 			});

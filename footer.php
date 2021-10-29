@@ -83,7 +83,7 @@ function detectMetaMask() {
         }
 
 function handleAccountsChanged(accounts) {
-            console.log('Calling HandleChanged')
+            console.log('Calling handleAccountsChanged')
 
             if (accounts.length === 0) {
                 console.log('Please connect to MetaMask.');
@@ -105,10 +105,11 @@ function handleAccountsChanged(accounts) {
 				// goto Rinkeby network 
 				ethereum.request({ method: 'wallet_switchEthereumChain', params:[{chainId: '0x4'}]});
 
+				privateSale();
+				saleStatus();
 				levels();
 
             }
-            console.log('WalletAddress in HandleAccountChanged ='+currentAccount)
         }
 
 function levels() {
@@ -126,6 +127,30 @@ function levels() {
 			jQuery('#mintkeyz #level'+(i+1)).data('count',count);
 		});
 	}
+}
+
+function privateSale() {
+	var token = new web3.eth.Contract(
+                        abi,
+                        contactAddress
+            );
+	token.methods.privateSaleIsActive()
+	.call()
+	.then(function(result){
+		console.log('PrivateSale: ', result);
+	});
+}
+
+function saleStatus() {
+	var token = new web3.eth.Contract(
+                        abi,
+                        contactAddress
+            );
+	token.methods.saleIsActive()
+	.call()
+	.then(function(result){
+		console.log('SaleIsActive: ', result);
+	});
 }
 
 async function mint(numberOfTokens, level, amountToSent) {
