@@ -54,7 +54,7 @@ get_header();
                 <div class="flex flex-col items-center justify-center">
                     <h3 class="font-zrnic text-[0.9rem] text-center uppercase h3-em-logo mb-2 lg:mb-0 lg:text-3xl ">Choose the <em>Starkey</em> you would like to mint</h3>
                     <p class="text-center mb-4 w-64 mx-auto lg:w-auto">Minting price tiers are determined by the rarity level of the Starkey</p>
-                    <p class="text-center uppercase mb-6">mint limit: <span id="mint_limit" data-max="10">10</span></p>
+                    <p class="text-center uppercase mb-6">mint limit: <span id="mint_limit" data-limit="10">10</span></p>
                     <form action="" method="get" class="flex gap-2 mb-16 lg:gap-6" id="mintkeyz">
                         <div class="flex flex-col justify-between">
                             <span class="uppercase text-center text-xs lg:text-2xl">Rarest</span>
@@ -63,43 +63,43 @@ get_header();
                         </div>
                         <div class="flex flex-col gap-4">
                             <div class="flex gap-2 lg:block">
-                                <span class="whitespace-nowrap"><button class="minus">&#8211;</button><input type="text" name="level-10" value="0" id="level10" class="input-number" data-price="1" data-count="0"><button class="plus">&#43;</button></span>
+                                <span class="whitespace-nowrap"><button class="minus">&#8211;</button><input type="text" name="level-10" value="0" id="level10" class="input-number" data-price="1" data-count="0" data-max="10"><button class="plus">&#43;</button></span>
                                 <label for="level10" class="ml-0 lg:ml-4">LEVEL 10 [<span class="discount">1</span> ETH] <span id="level10_count"></span></label>
                             </div>
                             <div class="flex gap-2 lg:block">
-                                <span class="whitespace-nowrap"><button class="minus">&#8211;</button><input type="text" name="level-9" value="0" id="level9" class="input-number" data-price="0.9" data-count="0"><button class="plus">&#43;</button></span>
+                                <span class="whitespace-nowrap"><button class="minus">&#8211;</button><input type="text" name="level-9" value="0" id="level9" class="input-number" data-price="0.9" data-count="0" data-max="10"><button class="plus">&#43;</button></span>
                                 <label for="level9" class="ml-0 lg:ml-4">LEVEL 9 [0.9 ETH] <span id="level9_count"></span></label>
                             </div>
                             <div class="flex gap-2 lg:block">
-                                <span class="whitespace-nowrap"><button class="minus">&#8211;</button><input type="text" name="level-8" value="0" id="level8" class="input-number" data-price="0.8" data-count="0"><button class="plus">&#43;</button></span>
+                                <span class="whitespace-nowrap"><button class="minus">&#8211;</button><input type="text" name="level-8" value="0" id="level8" class="input-number" data-price="0.8" data-count="0" data-max="10"><button class="plus">&#43;</button></span>
                                 <label for="level8" class="ml-0 lg:ml-4">LEVEL 8 [0.8 ETH] <span id="level8_count"></span></label>
                             </div>
                             <div class="flex gap-2 lg:block">
-                                <span class="whitespace-nowrap"><button class="minus">&#8211;</button><input type="text" name="level-7" value="0" id="level7" class="input-number" data-price="0.7" data-count="0"><button class="plus">&#43;</button></span>
+                                <span class="whitespace-nowrap"><button class="minus">&#8211;</button><input type="text" name="level-7" value="0" id="level7" class="input-number" data-price="0.7" data-count="0" data-max="10"><button class="plus">&#43;</button></span>
                                 <label for="level7" class="ml-0 lg:ml-4">LEVEL 7 [0.7 ETH] <span id="level7_count"></span></label>
                             </div>
                             <div class="flex gap-2 lg:block">
-                                <span class="whitespace-nowrap"><button class="minus">&#8211;</button><input type="text" name="level-6" value="0" id="level6" class="input-number" data-price="0.6" data-count="0"><button class="plus">&#43;</button></span>
+                                <span class="whitespace-nowrap"><button class="minus">&#8211;</button><input type="text" name="level-6" value="0" id="level6" class="input-number" data-price="0.6" data-count="0" data-max="10"><button class="plus">&#43;</button></span>
                                 <label for="level6" class="ml-0 lg:ml-4">LEVEL 6 [0.6 ETH] <span id="level6_count"></span></label>
                             </div>
                             <div class="flex gap-2 lg:block">
-                                <span class="whitespace-nowrap"><button class="minus">&#8211;</button><input type="text" name="level-5" value="0" id="level5" class="input-number" data-price="0.5" data-count="0"><button class="plus">&#43;</button></span>
+                                <span class="whitespace-nowrap"><button class="minus">&#8211;</button><input type="text" name="level-5" value="0" id="level5" class="input-number" data-price="0.5" data-count="0" data-max="10"><button class="plus">&#43;</button></span>
                                 <label for="level5" class="ml-0 lg:ml-4">LEVEL 5 [0.5 ETH] <span id="level5_count"></span></label>
                             </div>
                             <div class="flex gap-2 lg:block">
-                                <span class="whitespace-nowrap"><button class="minus">&#8211;</button><input type="text" name="level-4" value="0" id="level4" class="input-number" data-price="0.4" data-count="0"><button class="plus">&#43;</button></span>
+                                <span class="whitespace-nowrap"><button class="minus">&#8211;</button><input type="text" name="level-4" value="0" id="level4" class="input-number" data-price="0.4" data-count="0" data-max="10"><button class="plus">&#43;</button></span>
                                 <label for="level4" class="ml-0 lg:ml-4">LEVEL 4 [0.4 ETH] <span id="level4_count"></span></label>
                             </div>
                             <div class="flex gap-2 lg:block">
-                                <span class="whitespace-nowrap"><button class="minus">&#8211;</button><input type="text" name="level-3" value="0" id="level3" class="input-number" data-price="0.3" data-count="0"><button class="plus">&#43;</button></span>
+                                <span class="whitespace-nowrap"><button class="minus">&#8211;</button><input type="text" name="level-3" value="0" id="level3" class="input-number" data-price="0.3" data-count="0" data-max="10"><button class="plus">&#43;</button></span>
                                 <label for="level3" class="ml-0 lg:ml-4">LEVEL 3 [0.3 ETH] <span id="level3_count"></span></label>
                             </div>
                             <div class="flex gap-2 lg:block">
-                                <span class="whitespace-nowrap"><button class="minus">&#8211;</button><input type="text" name="level-2" value="0" id="level2" class="input-number" data-price="0.2" data-count="0"><button class="plus">&#43;</button></span>
+                                <span class="whitespace-nowrap"><button class="minus">&#8211;</button><input type="text" name="level-2" value="0" id="level2" class="input-number" data-price="0.2" data-count="0" data-max="10"><button class="plus">&#43;</button></span>
                                 <label for="level2" class="ml-0 lg:ml-4">LEVEL 2 [0.2 ETH] <span id="level2_count"></span></label>
                             </div>
                             <div class="flex gap-2 lg:block">
-                                <span class="whitespace-nowrap"><button class="minus">&#8211;</button><input type="text" name="level-1" value="0" id="level1" class="input-number" data-price="0" data-count="0"><button class="plus">&#43;</button></span>
+                                <span class="whitespace-nowrap"><button class="minus">&#8211;</button><input type="text" name="level-1" value="0" id="level1" class="input-number" data-price="0" data-count="0" data-max="10"><button class="plus">&#43;</button></span>
                                 <label for="level1" class="ml-0 lg:ml-4">LEVEL 1 [FREE!] <span id="level1_count"></span></label>
                             </div>
                         </div>
@@ -153,7 +153,7 @@ $('#invitecode').submit(function (evt) {
     	jQuery(document).ready(function($) {
 
 			$('.minus').click(function () {
-                var mintLimit = $('#mint_limit').attr('data-max');
+                var mintLimit = $('#mint_limit').attr('data-limit');
 				var $input = $(this).parent().find('input');
 				var count = parseInt($input.val()) - 1;
 				count = count < 0 ? 0 : count;
@@ -167,9 +167,9 @@ $('#invitecode').submit(function (evt) {
 				return false;
 			});
 			$('.plus').click(function () {
-                var mintLimit = $('#mint_limit').attr('data-max');
+                var mintLimit = $('#mint_limit').attr('data-limit');
 				var $input = $(this).parent().find('input');
-                if (parseInt($input.val())<10) {
+                if (parseInt($input.val())<$input.attr('data-max')) {
 				    $input.val(parseInt($input.val()) + 1);
                     $input.change();
                 }

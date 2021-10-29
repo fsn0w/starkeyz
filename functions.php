@@ -157,7 +157,8 @@ add_filter( 'wp_check_filetype_and_ext', function($data, $file, $filename, $mime
 		let mintInv = jQuery("#mint_invitation");
 		
 		jQuery("#mint_limit").html("5");
-		jQuery("#mint_limit").attr("data-max","5");
+		jQuery("#mint_limit").attr("data-limit","5");
+		jQuery("#level10").attr("data-max","5");
 		jQuery("#level10").val("0");
 
 		jQuery(".discount").html("0.5");
