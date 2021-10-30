@@ -207,6 +207,7 @@ jQuery(document).ready(function() {
 				}
             } else {
 				walletBtnMsg.html('Install Metamask')
+				walletBtnMsg.attr('href','https://metamask.io/download.html')
 				walletBtn.addClass('wallet-error')
             }
 
