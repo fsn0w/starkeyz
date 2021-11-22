@@ -1,6 +1,6 @@
 <?php
 /*
- * Template Name: Mint
+ * Template Name: FAQ
  *
  */
 
