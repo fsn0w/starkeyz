@@ -7,7 +7,7 @@
   }
 
 @font-face {
-    font-family: 'zrnic_rg';
+    font-family: 'zrnic_rg'; 
     src: url('../fonts/zrnic_rg-webfont.woff2') format('woff2'),
          url('../fonts/zrnic_rg-webfont.woff') format('woff');
     font-weight: normal;

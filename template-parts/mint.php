@@ -152,6 +152,17 @@ $('#invitecode').submit(function (evt) {
 
     	jQuery(document).ready(function($) {
 
+            function clearInputs(id) {
+                for (let i = 0; i < 10; i++) {
+                    var levelId = "level"+(i+1);
+                    if (levelId != id) {
+                        $("#"+levelId).data('count',0);
+                        $("#"+levelId).val(0);
+                    }
+
+                }
+            }
+
 			$('.minus').click(function () {
                 var mintLimit = $('#mint_limit').attr('data-limit');
 				var $input = $(this).parent().find('input');
@@ -159,6 +170,7 @@ $('#invitecode').submit(function (evt) {
 				count = count < 0 ? 0 : count;
 				$input.val(count);
 				$input.change();
+                clearInputs($input.attr('id'));
 
                 if (parseInt($input.val())<mintLimit && $input.attr('id')=='level10') {
                     $('#mint_limit').html( mintLimit - parseInt($input.val()) );
@@ -169,6 +181,8 @@ $('#invitecode').submit(function (evt) {
 			$('.plus').click(function () {
                 var mintLimit = $('#mint_limit').attr('data-limit');
 				var $input = $(this).parent().find('input');
+                clearInputs($input.attr('id'));
+
                 if (parseInt($input.val())<$input.attr('data-max')) {
 				    $input.val(parseInt($input.val()) + 1);
                     $input.change();
