@@ -264,3 +264,55 @@
 .mint-bg .container {
     z-index:2;
 }
+
+/* FAQ */
+
+.accordion {
+    & .accordion-item {
+      @apply border-dashed border-white border-b px-2 lg:px-10 lg:py-6;
+    }
+    & button {
+
+      @apply relative block text-left w-full py-4 px-0 border-0 bg-none outline-none hover:cursor-pointer focus:cursor-pointer font-normal;
+
+      & .icon {
+        @apply inline-block absolute top-5 right-5 lg:top-4;
+
+        &::after {
+          content: '';
+          background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzMiIGhlaWdodD0iMTgiIHZpZXdCb3g9IjAgMCAzMyAxOCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTEuMjAyMTUgMS4xNjI4NEwxNi4zOTI3IDE2LjM1MzNMMzEuNTgzMiAxLjE2Mjg0IiBzdHJva2U9IndoaXRlIiBzdHJva2Utd2lkdGg9IjIiLz4KPC9zdmc+);
+          transition: .3s;
+          @apply block absolute top-[5px] w-5 h-3 bg-no-repeat bg-contain lg:w-8 lg:h-4;
+        }
+      }
+
+      & .accordion-title {
+          @apply block font-zrnic text-xl pr-6 lg:pr-10 lg:text-4xl;
+      }
+
+    }
+    button[aria-expanded='true'] {
+      .icon {
+        
+        &::after {
+            @apply rotate-180;
+        }
+      }
+      + .accordion-content {
+        opacity: 1;
+        transition: all 200ms linear;
+        will-change: opacity, max-height;
+        @apply max-h-[50em] lg:max-h-[30em];
+      }
+    }
+    .accordion-content {
+      opacity: 0;
+      max-height: 0;
+      overflow: hidden;
+      transition: opacity 200ms linear, max-height 200ms linear;
+      will-change: opacity, max-height;
+      p {
+        @apply mb-6 pr-2 pt-4 text-base lg:text-2xl lg:pr-20;
+      }
+    }
+  }
